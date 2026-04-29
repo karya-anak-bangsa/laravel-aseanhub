@@ -16,8 +16,8 @@
                 <div class="col-lg-9">
                     <div class="event-info">
                         <span class="event-tag">{{ $about_competition->tag ?? '-' }}</span>
-                        <h3>{{ $about_competition->title ?? '-' }}</h3>
-                        <p>{{ $about_competition->description ?? '-' }}</p>
+                        <h3>{!! $about_competition->title ?? '-' !!}</h3>
+                        <p>{!! $about_competition->description ?? '-' !!}</p>
                     </div>
                 </div>
                 <div class="col-lg-2">
@@ -37,8 +37,8 @@
             <div class="row align-items-center gy-4">
                 <div class="col-lg-8">
                     <div class="event-info">
-                        <h3>{{ $about_competition->title_tor ?? '-' }}</h3>
-                        <p>{{ $about_competition->description_tor ?? '-' }}</p>
+                        <h3>{!! $about_competition->title_tor ?? '-' !!}</h3>
+                        <p>{!! $about_competition->description_tor ?? '-' !!}</p>
                     </div>
                 </div>
                 <div class="col-lg-4">

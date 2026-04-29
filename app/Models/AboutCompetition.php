@@ -45,6 +45,15 @@ class AboutCompetition extends Model
         'deleted_at' => 'datetime',
     ];
 
+    protected function eventDateInput(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->event_date
+                ? $this->event_date->format('Y-m-d')
+                : null,
+        );
+    }
+
     # ...
     protected function eventMonth(): Attribute
     {

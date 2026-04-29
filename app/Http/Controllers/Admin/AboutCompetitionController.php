@@ -37,7 +37,7 @@ class AboutCompetitionController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $data = AboutCompetition::first($id);
+        $data = AboutCompetition::findOrFail($id);
 
         $request->validate([
             'tag'               => 'required|string|max:255',
@@ -49,18 +49,19 @@ class AboutCompetitionController extends Controller
             'file_path'         => 'nullable|file|mimes:pdf|max:5120',
         ]);
 
-        if ($request->hasFile('file_path')) {
-            $data->file_path = $request->file('file_path')->store('about-competition', 'public');
-        }
-
-        $data->update([
-            'tag'               => $request->tag,
-            'title'             => $request->title,
-            'description'       => $request->description,
-            'event_date'        => $request->event_date,
-            'title_tor'         => $request->title_tor,
-            'description_tor'   => $request->description_tor,
+        $updateData = $request->only([
+            'tag',
+            'title',
+            'description',
+            'event_date',
+            'title_tor',
+            'description_tor',
         ]);
+
+        if ($request->hasFile('file_path'))
+            $updateData['file_path'] = $request->file('file_path')->store('about-competition', 'public');
+
+        $data->update($updateData);
 
         return redirect()
             ->route('admin.about-competition.index')

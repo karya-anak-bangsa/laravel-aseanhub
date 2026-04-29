@@ -52,15 +52,9 @@ class OpeningSpeechesController extends Controller
         ]);
 
         $updateData = $request->only(['name', 'position', 'message']);
-        // $updateData = [
-        //     'name'      => $request->name,
-        //     'position'  => $request->position,
-        //     'message'   => $request->message,
-        // ];
 
-        if ($request->hasFile('photo')) {
+        if ($request->hasFile('photo'))
             $updateData['photo'] = $request->file('photo')->store('opening-speeches', 'public');
-        }
 
         $data->update($updateData);
 
