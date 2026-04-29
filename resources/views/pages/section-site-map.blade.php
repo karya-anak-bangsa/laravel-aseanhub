@@ -8,16 +8,14 @@
         <div class="facilities-showcase">
 
             @foreach ($site_area as $index => $item)
-                @php
-                    $isReverse = $index % 2 != 0;
-                @endphp
+                @php $isReverse = $index % 2 != 0; @endphp
 
                 <div class="row align-items-center gy-5 {{ !$loop->last ? 'mb-5' : 'mb-0' }}">
 
                     {{-- IMAGE --}}
                     <div class="col-lg-6 {{ $isReverse ? 'order-lg-2' : '' }}">
                         <div class="showcase-image">
-                            <img src="{{ $item?->image_url }}" class="img-fluid" alt="">
+                            <img src="{{ $item->image_url }}" alt="{{ $item->title }}" class="img-fluid">
                         </div>
                     </div>
 
