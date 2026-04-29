@@ -60,7 +60,7 @@ class AboutAseanHubController extends Controller
         return redirect()
             ->route('admin.about-aseanhub.index')
             ->with('notify', [
-                'status' => 'info',   // success | error | warning | info
+                'status' => 'info',
                 'text'   => 'Data successfully updated',
             ]);
     }
