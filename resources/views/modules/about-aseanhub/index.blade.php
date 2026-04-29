@@ -38,7 +38,7 @@
                         alt="Foto {{ $data->title ?? '-' }}">
                 </td>
                 <td class="text-left">{{ $data->title ?? '-' }}</td>
-                <td class="text-left">{!! \Illuminate\Support\Str::limit(strip_tags($data->description), 180) !!}</td>
+                <td class="text-left">{!! $data->description ?? '-' !!}</td>
                 <td class="text-center">
                     <a href="{{ route('admin.about-aseanhub.edit', $data->id_about_aseanhub) }}" class="btn btn-sm btn-warning">
                         <i class="fa-solid fa-edit"></i>

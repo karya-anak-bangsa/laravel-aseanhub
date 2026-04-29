@@ -41,6 +41,7 @@
                         :required=true />
                 </div>
                 <div class="col-sm-12">
+                    <img src="{{ $data->photo_url }}" width="128" class="mb-2 rounded">
                     <x-modules.form-input
                         label="Photo"
                         name="photo"
@@ -51,7 +52,7 @@
 
             <div class="row">
                 <div class="col-sm-2">
-                    <a href="{{ route('admin.about-aseanhub.index') }}" class="btn btn-block btn-secondary">
+                    <a href="{{ route('admin.opening-speeches.index') }}" class="btn btn-block btn-secondary">
                         <i class="fas fa-undo mr-2"></i>Back
                     </a>
                 </div>

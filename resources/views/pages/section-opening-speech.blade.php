@@ -25,7 +25,7 @@
                                 <div class="profile-info">
                                     <h4 class="fw-bold">{{ $item->name }}</h4>
                                     <span class="current-role fw-semibold">{{ $item->position }}</span>
-                                    <p>{{ $item->message }}</p>
+                                    <p>{!! $item->message !!}</p>
                                 </div>
                             </div>
 

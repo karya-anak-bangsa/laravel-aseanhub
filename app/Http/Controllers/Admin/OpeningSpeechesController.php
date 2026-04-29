@@ -52,15 +52,13 @@ class OpeningSpeechesController extends Controller
         ]);
 
         $updateData = $request->only(['name', 'position', 'message']);
+        // $updateData = [
+        //     'name'      => $request->name,
+        //     'position'  => $request->position,
+        //     'message'   => $request->message,
+        // ];
 
         if ($request->hasFile('photo')) {
-
-            // // hapus lama
-            // if ($data->photo && Storage::disk('public')->exists($data->photo)) {
-            //     Storage::disk('public')->delete($data->photo);
-            // }
-
-            // upload baru
             $updateData['photo'] = $request->file('photo')->store('opening-speeches', 'public');
         }
 

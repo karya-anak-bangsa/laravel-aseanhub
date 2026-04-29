@@ -37,14 +37,14 @@
                 <tr>
                     <td class="text-center">
                         <img src="{{ $item->photo_url }}"
-                            class="rounded-circle" width="128" height="128" loading="lazy"
+                            class="rounded-circle" width="150" height="150" loading="lazy"
                             alt="Foto {{ $item->name }}">
                     </td>
                     <td class="text-left">
                         <span class="text-bold">{{ $item->name ?? '-' }}</span><br>
                         <small class="text-muted">{{ $item->position ?? '-' }}</small>
                     </td>
-                    <td class="text-left">{!! \Illuminate\Support\Str::limit(strip_tags($item->message), 200) !!}</td>
+                    <td class="text-left">{!! $item->message ?? '-' !!}</td>
                     <td class="text-center">
                         <a href="{{ route('admin.opening-speeches.edit', $item->id_opening_speeches) }}" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-edit"></i>
