@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Timeline extends Model
@@ -47,20 +48,30 @@ class Timeline extends Model
     #--------------------------------------------------------------------------
     # ACCESSOR (FOR UI)
     #--------------------------------------------------------------------------
-    public function getIsCurrentAttribute()
+    protected function isCurrent(): Attribute
     {
-        // return now()->between($this->date_start, $this->date_end);
-        return $this->status_data === 'Active' && now()->between($this->date_start, $this->date_end);
+        return Attribute::make(
+            get: fn() => $this->status_data === 'Active' && now()->between($this->date_start, $this->date_end),
+        );
     }
 
+    # masih dipakai dihalaman backend
     public function getDateStartFormattedAttribute()
     {
         return $this->date_start->translatedFormat('d F Y');
     }
 
+    # masih dipakai dihalaman backend
     public function getDateEndFormattedAttribute()
     {
         return $this->date_end->translatedFormat('d F Y');
+    }
+
+    protected function dateRange(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->date_start->translatedFormat('d M') . ' - ' . $this->date_end->translatedFormat('d M Y'),
+        );
     }
 
     #--------------------------------------------------------------------------
@@ -79,5 +90,18 @@ class Timeline extends Model
             self::PHASE_ASSESSMENT   => 'Assessment',
             self::PHASE_ANNOUNCEMENT => 'Announcement',
         ];
+    }
+
+    protected function phaseColor(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => match ($this->phase_key) {
+                self::PHASE_REGISTRATION => 'bg-success',
+                self::PHASE_SUBMISSION   => 'bg-primary',
+                self::PHASE_ASSESSMENT   => 'bg-warning',
+                self::PHASE_ANNOUNCEMENT => 'bg-danger',
+                default => 'bg-secondary',
+            }
+        );
     }
 }

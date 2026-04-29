@@ -11,7 +11,7 @@
 
                     <div class="gathering-card">
                         <div class="gathering-header align-items-center">
-                            <div class="gathering-badge">
+                            <div class="gathering-badge {{ $item->phase_color }}">
                                 <span class="badge-day">
                                     {{ $loop->iteration }}
                                 </span>
@@ -20,9 +20,8 @@
                         </div>
                         <div class="gathering-body">
                             <p class="text-muted">
-                                {{ $item->description ?? '-' }}
-                                {{ $item->date_start->translatedFormat('d M') }} -
-                                {{ $item->date_end->translatedFormat('d M Y') }}.
+                                {{ $item->description }}
+                                {{ $item->date_range }}
                             </p>
                             @if ($item->is_current)
                                 <span class="badge bg-success-subtle text-success" style="padding: 10px 10px;">
