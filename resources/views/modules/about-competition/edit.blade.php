@@ -44,7 +44,7 @@
                         label="Event Date"
                         name="event_date"
                         type="date"
-                        :value="$data->event_date ? $data->event_date->format('Y-m-d') : ''"
+                        :value='$data->event_date_input'
                         :required=true />
                 </div>
             </div>
@@ -71,7 +71,7 @@
                         label="TOR File (pdf)"
                         name="file_path"
                         type="file"
-                        :value='$data->file_path ?? null'
+                        :value='$data->file_path'
                         :required=false />
                 </div>
             </div>
