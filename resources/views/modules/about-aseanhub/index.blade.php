@@ -34,8 +34,8 @@
             <tr>
                 <td class="text-center">
                     <img src="{{ $data->image_url }}"
-                        class="rounded-circle" width="128" height="128" loading="lazy"
-                        alt="Foto {{ $data->title }}">
+                        class="rounded-circle" width="150" height="150" loading="lazy"
+                        alt="Foto {{ $data->title ?? '-' }}">
                 </td>
                 <td class="text-left">{{ $data->title ?? '-' }}</td>
                 <td class="text-left">{!! \Illuminate\Support\Str::limit(strip_tags($data->description), 180) !!}</td>
