@@ -20,7 +20,7 @@
                         </div>
                         <div class="gathering-body">
                             <p class="text-muted">
-                                {{ $item->description }}
+                                {!! $item->description !!}
                                 {{ $item->date_range }}
                             </p>
                             @if ($item->is_current)

@@ -44,7 +44,6 @@ class Timeline extends Model
         'date_end' => 'datetime',
     ];
 
-
     #--------------------------------------------------------------------------
     # ACCESSOR (FOR UI)
     #--------------------------------------------------------------------------
@@ -55,16 +54,28 @@ class Timeline extends Model
         );
     }
 
-    # masih dipakai dihalaman backend
     public function getDateStartFormattedAttribute()
     {
         return $this->date_start->translatedFormat('d F Y');
     }
 
-    # masih dipakai dihalaman backend
     public function getDateEndFormattedAttribute()
     {
         return $this->date_end->translatedFormat('d F Y');
+    }
+
+    protected function dateStartInput(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->date_start->format('Y-m-d'),
+        );
+    }
+
+    protected function dateEndInput(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->date_end->format('Y-m-d'),
+        );
     }
 
     protected function dateRange(): Attribute
@@ -102,6 +113,13 @@ class Timeline extends Model
                 self::PHASE_ANNOUNCEMENT => 'bg-danger',
                 default => 'bg-secondary',
             }
+        );
+    }
+
+    protected function phaseLabel(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => ucfirst($this->phase_key),
         );
     }
 }

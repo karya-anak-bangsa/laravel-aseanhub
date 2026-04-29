@@ -37,7 +37,7 @@
                         label="Start Date"
                         name="date_start"
                         type="date"
-                        :value="$data->date_start->format('Y-m-d')"
+                        :value="$data->date_start_input"
                         :required=true />
                 </div>
                 <div class="col-sm-6">
@@ -45,7 +45,7 @@
                         label="End Date"
                         name="date_end"
                         type="date"
-                        :value="$data->date_end->format('Y-m-d')"
+                        :value="$data->date_end_input"
                         :required=true />
                 </div>
                 <div class="col-sm-12">
@@ -60,7 +60,7 @@
 
             <div class="row">
                 <div class="col-sm-2">
-                    <a href="{{ route('admin.about-aseanhub.index') }}" class="btn btn-block btn-secondary">
+                    <a href="{{ route('admin.timeline.index') }}" class="btn btn-block btn-secondary">
                         <i class="fas fa-undo mr-2"></i>Back
                     </a>
                 </div>

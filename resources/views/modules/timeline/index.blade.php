@@ -42,10 +42,10 @@
                     <td class="text-left">{{ $item->title ?? '-' }}</td>
                     <td class="text-left">{{ $item->date_start_formatted }}</td>
                     <td class="text-left">{{ $item->date_end_formatted }}</td>
-                    <td class="text-left">{{ $item->description ?? '-' }}</td>
+                    <td class="text-left">{!! $item->description ?? '-' !!}</td>
                     <td class="text-left">
                         <span class="badge badge-info badge-custom">
-                            {{ Str::ucfirst($item->phase_key) }}
+                            {{ $item->phase_label }}
                         </span>
                     </td>
                     <td class="text-left">
