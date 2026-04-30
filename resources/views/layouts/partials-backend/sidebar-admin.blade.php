@@ -72,7 +72,7 @@
     <li class="nav-item">
         <a href="{{ route('admin.timeline.index') }}" class="nav-link @yield('nav-timeline')">
             <i class="nav-icon fas fa-calendar-days"></i>
-            <p>Activity Timeline</p>
+            <p>Timeline & Event</p>
         </a>
     </li>
     <li class="nav-item">
@@ -81,6 +81,7 @@
             <p>Site Area</p>
         </a>
     </li>
+
     <li class="nav-item">
         <a href="{{-- route('admin.timeline.index') --}}" class="nav-link @yield('nav-reward')">
             <i class="nav-icon fas fa-award"></i>

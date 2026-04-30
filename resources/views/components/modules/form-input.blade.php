@@ -11,10 +11,8 @@
         </div>
     @else
         <input
-            type="{{ $type }}"
-            class="form-control border-dark"
-            name="{{ $name }}" id="{{ $name }}"
-            value="{{ old($name, $value) }}">
+            type="{{ $type }}" class="form-control border-dark"
+            name="{{ $name }}" id="{{ $name }}" value="{{ old($name, $value) }}">
     @endif
 
     @error($name)

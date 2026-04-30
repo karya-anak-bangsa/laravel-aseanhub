@@ -20,13 +20,30 @@
                         label="Title"
                         name="title"
                         type="text"
-                        :value='$data->title'
+                        :value="$data->title"
                         :required=true />
+                </div>
+                <div class="col-sm-12">
                     <x-modules.form-textarea
                         label="Description"
                         name="description"
-                        :value='$data->description'
+                        :value="$data->description"
                         :required=true />
+                </div>
+                <div class="col-sm-6">
+                    {{-- <img src="{{ $data->image_url }}" width="150" class="mb-3 rounded"> --}}
+                    <x-modules.form-input
+                        label="Image (Max. 2MB)"
+                        name="image"
+                        type="file"
+                        :required=false />
+                </div>
+                <div class="col-sm-6">
+                    <x-modules.form-input
+                        label="File (Optional Max. 10MB)"
+                        name="file_path"
+                        type="file"
+                        :required=false />
                 </div>
             </div>
 

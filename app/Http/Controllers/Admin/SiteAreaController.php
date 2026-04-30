@@ -41,13 +41,26 @@ class SiteAreaController extends Controller
         $request->validate([
             'title'         => 'required|string|max:255',
             'description'   => 'required|string',
+            'image'         => 'nullable|image|mimes:jpeg,jpg,png,webp|max:2048',
+            'file_path'     => 'nullable|file|max:10240',
         ]);
 
         $data = SiteArea::findOrFail($id);
-        $data->update([
+
+        $updateData = [
             'title'         => $request->title,
             'description'   => $request->description,
-        ]);
+        ];
+
+        if ($request->hasFile('image')) {
+            $updateData['image'] = $request->file('image')->store('site-area', 'public');
+        }
+
+        if ($request->hasFile('file_path')) {
+            $updateData['file_path'] = $request->file('file_path')->store('site-area', 'public');
+        }
+
+        $data->update($updateData);
 
         return redirect()
             ->route('admin.site-area.index')
