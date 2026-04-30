@@ -25,3 +25,6 @@
 
 9. Hapus efek-efek (.hero .event-block .event-actions .btn-rsvp:hover)
     background dan box-shadow
+
+10. Perkecil jarak magrin untuk Site Area di (.campus-facilities .facilities-showcase)
+    dari margin-bottom: 4rem; menjadi margin-bottom: 1rem;
