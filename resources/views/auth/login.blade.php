@@ -22,7 +22,7 @@
                     <label for="email" class="form-label">Email</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                        <input type="email" class="form-control" name="email" id="email" autofocus>
+                        <input type="email" class="form-control" name="email" id="email" autocomplete="email">
                     </div>
                 </div>
                 <div class="mb-4">

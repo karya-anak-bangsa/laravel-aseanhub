@@ -41,4 +41,10 @@ class DashboardController extends Controller
         $participants = Auth::guard('participants')->user();
         return view('modules.dashboard.participants', compact('participants'));
     }
+
+    public function showVoters()
+    {
+        $voters = Auth::guard('voters')->user();
+        return view('modules.dashboard.voters', compact('voters'));
+    }
 }

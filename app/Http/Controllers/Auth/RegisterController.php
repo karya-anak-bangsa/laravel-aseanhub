@@ -37,9 +37,10 @@ class RegisterController extends Controller
 
         # 2. Validasi Email Global
         if (AuthService::emailExists($request->email)) {
-            return back()->withInput()->with('notify', [
-                'status' => 'error',
-                'text'   => 'Email already registered.',
+            return back()->withInput()->with('alert', [
+                'icon'  => 'error',
+                'title' => 'Email already registered.',
+                'text'  => 'Please login instead.',
             ]);
         }
 
@@ -57,9 +58,10 @@ class RegisterController extends Controller
         }
 
         # 4. REDIRECT LOGIN
-        return redirect()->route('login')->with('notify', [
-            'status' => 'info',
-            'text'   => 'Register success, please login',
+        return redirect()->route('login')->with('alert', [
+            'icon'  => 'success',
+            'title' => 'Register Success',
+            'text'  => 'Please login to continue',
         ]);
     }
 

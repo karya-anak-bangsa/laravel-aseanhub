@@ -1,16 +1,7 @@
 @extends('layouts.auth')
 
-{{-- push styles & scripts --}}
-@include('components.notify.styles')
-@include('components.notify.scripts')
-
+@section('nav-register', 'active')
 @section('content')
-    @if (session('notify'))
-        <div id="notify-data"
-            data-status="{{ session('notify.status') }}"
-            data-text="{{ session('notify.text') }}">
-        </div>
-    @endif
 
     <div class="text-center">
         <div class="mb-3">
@@ -30,7 +21,7 @@
                     <label for="role" class="form-label">Join As</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="fas fa-users"></i></span>
-                        <select class="form-select" name="role" id="role" autofocus>
+                        <select class="form-select" name="role" id="role">
                             <option value="" disabled selected></option>
                             <option value="participants">Participants</option>
                             <option value="voters">Voters</option>
@@ -41,7 +32,7 @@
                     <label for="email" class="form-label">Email</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                        <input type="email" class="form-control" name="email" id="email">
+                        <input type="email" class="form-control" name="email" id="email" autocomplete="email">
                     </div>
                 </div>
                 <div class="mb-4">
@@ -59,12 +50,12 @@
                         <i class="fas fa-user-plus me-2"></i>Register
                     </button>
                 </div>
-                <div class="mb-0">
+                {{-- <div class="mb-0">
                     <div class="text-center">
                         <span>Already have an account?</span>
                         <span><a href="{{ route('login') }}"> Login</a></span>
                     </div>
-                </div>
+                </div> --}}
             </form>
         </div>
         {{-- card-body --}}
@@ -73,6 +64,20 @@
 @endsection
 
 @push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if (session('alert'))
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                Swal.fire({
+                    icon: "{{ session('alert.icon') }}",
+                    title: "{{ session('alert.title') }}",
+                    text: "{{ session('alert.text') }}",
+                    confirmButtonColor: '#f59e0b'
+                });
+            });
+        </script>
+    @endif
+
     <script>
         document.getElementById('togglePassword').addEventListener('click', function() {
             let password = document.getElementById('password');

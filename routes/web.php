@@ -92,5 +92,5 @@ Route::middleware(['auth:participants', 'role:participants'])->prefix('participa
 # ------------------------------------------------------------------------------------------------- #
 Route::middleware(['auth:voters', 'role:voters'])->prefix('voters')->name('voters.')
     ->group(function () {
-        # Belum dibuat
+        Route::get('/dashboard', [DashboardController::class, 'showVoters'])->name('dashboard');
     });
