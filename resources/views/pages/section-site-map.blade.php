@@ -23,7 +23,7 @@
                     <div class="col-lg-6 {{ $isReverse ? 'order-lg-1' : '' }}">
                         <div class="showcase-content text-center">
                             <h3>{{ $item->title }}</h3>
-                            <p>{{ $item->description }}</p>
+                            <p>{!! $item->description !!}</p>
                             @if ($item->file_url)
                                 <a href="{{ $item->file_url }}" class="discover-link" target="_blank" download>
                                     <i class="fas fa-download"></i> Download Map

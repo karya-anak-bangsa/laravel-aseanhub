@@ -20,37 +20,12 @@
                         label="Title"
                         name="title"
                         type="text"
-                        :value='$data->title ?? null'
+                        :value='$data->title'
                         :required=true />
-                </div>
-                <div class="col-sm-12">
                     <x-modules.form-textarea
                         label="Description"
                         name="description"
-                        rows=15
-                        :value='$data->description ?? null'
-                        :required=true />
-                </div>
-                <div class="col-sm-6">
-                    <x-modules.form-input
-                        label="Image"
-                        name="image"
-                        type="file"
-                        :required=false />
-                </div>
-                <div class="col-sm-6">
-                    <x-modules.form-input
-                        label="File Path"
-                        name="file_path"
-                        type="file"
-                        :required=false />
-                </div>
-                <div class="col-sm-12">
-                    <x-modules.form-input
-                        label="Sort Order"
-                        name="sort_order"
-                        type="text"
-                        :value='$data->sort_order ?? null'
+                        :value='$data->description'
                         :required=true />
                 </div>
             </div>

@@ -38,7 +38,7 @@
                             alt="Foto {{ $item->title }}">
                     </td>
                     <td class="text-left">{{ $item->title ?? '-' }}</td>
-                    <td class="text-left">{{ $item->description ?? '-' }}</td>
+                    <td class="text-left">{!! $item->description ?? '-' !!}</td>
                     <td class="text-center">
                         <a href="{{ route('admin.site-area.edit', $item->id_site_area) }}" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-edit"></i>
