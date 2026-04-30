@@ -1,6 +1,18 @@
 @extends('layouts.auth')
 
+{{-- push styles & scripts --}}
+@include('components.notify.styles')
+@include('components.notify.scripts')
+
+{{-- content --}}
 @section('content')
+    @if (session('notify'))
+        <div id="notify-data"
+            data-status="{{ session('notify.status') }}"
+            data-text="{{ session('notify.text') }}">
+        </div>
+    @endif
+
     <div class="text-center">
         <div class="mb-3">
             <img src="{{ asset('img/dki-jakarta.webp') }}" style="height:100px">
@@ -10,13 +22,9 @@
             <span class="text-muted">Create your account and join the competition today</span>
         </div>
     </div>
+
     <div class="card border-0 px-2 py-2" id="auth-card">
         <div class="card-body">
-            @if (session('notify'))
-                <div class="alert alert-warning">
-                    {{ session('notify') }}
-                </div>
-            @endif
             <form action="{{ route('register.store') }}" method="post">
                 @csrf
                 <div class="mb-4">

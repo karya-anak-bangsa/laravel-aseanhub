@@ -2,94 +2,77 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Participants;
+use App\Models\Voters;
+use App\Services\AuthService;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Participants;
-use App\Models\Voters;
 
 class RegisterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function show(string $id)
+    {
+        //
+    }
+
     public function create()
     {
         return view('auth.register');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
+        # 1. Validasi Input Form
         $request->validate([
             'role'     => 'required|in:participants,voters',
             'email'    => 'required|email',
             'password' => 'required|min:8',
         ]);
 
-        if ($request->role === 'participants') {
-            $exists = Participants::where('email', $request->email)->exists();
-            if ($exists) {
-                return back()->withInput()->with('notify', 'Email already registered as participant');
-            } else {
-                Participants::create([
-                    'email'    => $request->email,
-                    'password' => Hash::make($request->password),
-                ]);
-            }
-        } else {
-            $exists = Voters::where('email', $request->email)->exists();
-            if ($exists) {
-                return back()->withInput()->with('notify', 'Email already registered as voter');
-            } else {
-                Voters::create([
-                    'email'    => $request->email,
-                    'password' => Hash::make($request->password),
-                ]);
-            }
+        # 2. Validasi Email Global
+        if (AuthService::emailExists($request->email)) {
+            return back()->withInput()->with('notify', [
+                'status' => 'info',
+                'text'   => 'Register success, please login',
+            ]);
         }
 
-        return redirect()->route('login')
-            ->with('notify', 'Register success, please login');
+        # 3. Proses Registrasi
+        if ($request->role === 'participants') {
+            Participants::create([
+                'email'    => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+        } else {
+            Voters::create([
+                'email'    => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+        }
+
+        # 4. REDIRECT LOGIN
+        return redirect()->route('login')->with('notify', [
+            'status' => 'info',
+            'text'   => 'Register success, please login',
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //
