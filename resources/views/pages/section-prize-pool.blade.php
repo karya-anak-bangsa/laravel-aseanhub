@@ -8,7 +8,7 @@
         <div class="virtual-tour-block">
             <div class="tour-video-bg">
                 <video autoplay="" muted="" loop="">
-                    <source src="{{ asset('template-frontend/assets/img/education/video-3.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('template-frontend/assets/img/education/video-4.mp4') }}" type="video/mp4">
                 </video>
             </div>
             <div class="tour-overlay"></div>

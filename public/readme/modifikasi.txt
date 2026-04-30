@@ -28,3 +28,6 @@
 
 10. Perkecil jarak magrin untuk Site Area di (.campus-facilities .facilities-showcase)
     dari margin-bottom: 4rem; menjadi margin-bottom: 1rem;
+
+11. Memperbesar jarak untuk About Competition (.hero .features-block)
+    dari padding-bottom: 40px; menjadi padding-bottom: 60px;
