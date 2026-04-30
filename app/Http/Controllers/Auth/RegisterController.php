@@ -39,8 +39,8 @@ class RegisterController extends Controller
         if (AuthService::emailExists($request->email)) {
             return back()->withInput()->with('alert', [
                 'icon'  => 'error',
-                'title' => 'Email already registered.',
-                'text'  => 'Please login instead.',
+                'title' => 'Email already registered',
+                'text'  => 'Please use a different email address.',
             ]);
         }
 

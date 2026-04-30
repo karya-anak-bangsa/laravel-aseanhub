@@ -22,6 +22,7 @@
                             HTMLFormElement.prototype.submit.call(form); // ✔ clean
                         }
                     });
+
                 });
             });
         });

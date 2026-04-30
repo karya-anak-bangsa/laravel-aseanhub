@@ -45,52 +45,17 @@
                     </div>
                     <small class="text-muted">Password minimum 8 characters</small>
                 </div>
-                <div class="mb-4">
+                <div class="mb-0">
                     <button type="submit" class="btn btn-login btn-warning w-100">
                         <i class="fas fa-user-plus me-2"></i>Register
                     </button>
                 </div>
-                {{-- <div class="mb-0">
-                    <div class="text-center">
-                        <span>Already have an account?</span>
-                        <span><a href="{{ route('login') }}"> Login</a></span>
-                    </div>
-                </div> --}}
             </form>
         </div>
         {{-- card-body --}}
     </div>
     {{-- card --}}
+
 @endsection
-
-@push('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    @if (session('alert'))
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                Swal.fire({
-                    icon: "{{ session('alert.icon') }}",
-                    title: "{{ session('alert.title') }}",
-                    text: "{{ session('alert.text') }}",
-                    confirmButtonColor: '#f59e0b'
-                });
-            });
-        </script>
-    @endif
-
-    <script>
-        document.getElementById('togglePassword').addEventListener('click', function() {
-            let password = document.getElementById('password');
-            let icon = document.getElementById('eyeIcon');
-            if (password.type === 'password') {
-                password.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
-            } else {
-                password.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
-            }
-        });
-    </script>
-@endpush
+@include('components.password.scripts')
+@include('components.sweetalert.scripts-alert')
