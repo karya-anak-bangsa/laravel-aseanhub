@@ -9,8 +9,8 @@
             </a>
         </div>
         <div class="social-links">
-            <a href="{{ route('login') }}" class="btn btn-danger me-2"><i class="fa-solid fa-thumbs-up me-2"></i>Sign In</a>
-            <a href="{{ route('register') }}" class="btn btn-primary "><i class="fa-solid fa-right-to-bracket me-2"></i>Sign Up</a>
+            <a href="{{ route('register') }}" class="btn btn-primary me-2"><i class="fa-solid fa-thumbs-up me-2"></i>Sign Up</a>
+            <a href="{{ route('login') }}" class="btn btn-danger me-0"><i class="fa-solid fa-right-to-bracket me-2"></i>Sign In</a>
         </div>
     </div>
 

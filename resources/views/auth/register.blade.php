@@ -4,7 +4,6 @@
 @include('components.notify.styles')
 @include('components.notify.scripts')
 
-{{-- content --}}
 @section('content')
     @if (session('notify'))
         <div id="notify-data"

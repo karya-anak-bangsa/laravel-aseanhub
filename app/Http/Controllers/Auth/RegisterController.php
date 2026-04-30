@@ -38,8 +38,8 @@ class RegisterController extends Controller
         # 2. Validasi Email Global
         if (AuthService::emailExists($request->email)) {
             return back()->withInput()->with('notify', [
-                'status' => 'info',
-                'text'   => 'Register success, please login',
+                'status' => 'error',
+                'text'   => 'Email already registered.',
             ]);
         }
 

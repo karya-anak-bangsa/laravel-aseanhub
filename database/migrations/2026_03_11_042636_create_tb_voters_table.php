@@ -12,8 +12,8 @@ return new class extends Migration
 
             # attribute voters
             $table->id('id_voters');
-            $table->string('voters_name');
-            $table->string('voters_country');
+            $table->string('voters_name')->nullable();;
+            $table->string('voters_country')->nullable();;
             $table->string('ip_address')->nullable();
             $table->string('mac_address')->nullable();
             $table->string('device_hash')->nullable();
