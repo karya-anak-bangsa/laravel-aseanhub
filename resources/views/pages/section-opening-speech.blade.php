@@ -1,7 +1,5 @@
-{{-- Sumber : alumni.html - alumni section  --}}
-
-<section id="alumni" class="alumni section light-background">
-    <div class="container"> {{-- data-aos="fade-up" --}}
+<section id="opening-speeches" class="alumni section light-background">
+    <div class="container">
 
         <div class="section-title">
             <h2>Opening Speech</h2>

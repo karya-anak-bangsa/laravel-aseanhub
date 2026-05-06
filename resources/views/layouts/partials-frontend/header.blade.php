@@ -28,7 +28,7 @@
                         <span>Competition</span><i class="bi bi-chevron-down toggle-dropdown"></i>
                     </a>
                     <ul>
-                        <li><a href="#">Opening Speech</a></li>
+                        <li><a href="#opening-speeches">Opening Speech</a></li>
                         <li><a href="#">About Competition</a></li>
                         <li><a href="">Timeline &amp; Event</a></li>
                     </ul>
