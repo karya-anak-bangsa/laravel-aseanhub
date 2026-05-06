@@ -81,11 +81,4 @@
             <p>Site Area</p>
         </a>
     </li>
-
-    <li class="nav-item">
-        <a href="{{-- route('admin.timeline.index') --}}" class="nav-link @yield('nav-reward')">
-            <i class="nav-icon fas fa-award"></i>
-            <p>Prize Pool</p>
-        </a>
-    </li>
 @endif
