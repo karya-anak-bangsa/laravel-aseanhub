@@ -85,10 +85,10 @@
                         </a>
 
                         {{-- DELETE --}}
-                        <form action="{{ route('admin.judges.destroy', $item->id_judges) }}" method="post" enctype="multipart/form-data" class="confirm-submit">
+                        <form action="{{ route('admin.judges.destroy', $item->id_judges) }}" method="post" enctype="multipart/form-data" class="confirm-submit d-inline">
                             @csrf @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger">
-                                <i class="fas fa-trash mr-2"></i>
+                                <i class="fas fa-trash"></i>
                             </button>
                         </form>
                     </td>
@@ -107,3 +107,4 @@
 {{-- push scripts --}}
 @include('components.datatables.scripts')
 @include('components.notify.scripts')
+@include('components.sweetalert.scripts-destroy')
