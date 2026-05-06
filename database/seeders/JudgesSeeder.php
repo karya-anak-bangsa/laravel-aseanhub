@@ -24,7 +24,7 @@ class JudgesSeeder extends Seeder
             'origin_country'        => 'Indonesia',
             'origin_institution'    => 'Institut Pertanian Bogor',
             'judges_task'           => 'Assessment One',
-            'judges_photo'          => 'judges/dummy/person-1.webp',
+            'judges_photo'          => 'judges/dummy/person-2.webp',
             'email'                 => 'example.judges@gmail.com',
             'password'              => Hash::make('12341234'),
         ]);
