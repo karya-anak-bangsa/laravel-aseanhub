@@ -14,9 +14,9 @@ class JudgesSeeder extends Seeder
         Judges::truncate();
 
         # data dummy
-        // Judges::factory()->count(10)->assessment_one()->create();
-        // Judges::factory()->count(10)->assessment_two()->create();
-        // Judges::factory()->count(10)->final_assessment()->create();
+        Judges::factory()->count(10)->assessment_one()->create();
+        Judges::factory()->count(10)->assessment_two()->create();
+        Judges::factory()->count(10)->final_assessment()->create();
 
         # data example
         Judges::create([

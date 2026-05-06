@@ -8,7 +8,7 @@
                     title: "{{ session('alert.title') }}",
                     text: "{{ session('alert.text') }}",
                     confirmButtonColor: '#6c757e',
-                    confirmButtonText: 'Back',
+                    confirmButtonText: 'Try Again',
                 });
             @endif
         });

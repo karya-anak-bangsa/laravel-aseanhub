@@ -7,5 +7,6 @@
     @include('pages.section-timeline')
     @include('pages.section-site-map')
     @include('pages.section-prize-pool')
+    @include('pages.section-judges')
     @include('pages.section-contact')
 @endsection

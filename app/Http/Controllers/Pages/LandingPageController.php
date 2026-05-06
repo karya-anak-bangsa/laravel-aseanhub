@@ -17,26 +17,32 @@ class LandingPageController extends Controller
 {
     public function index()
     {
-
         # ...
         $about_aseanhub         = AboutAseanHub::where('status_data', 'Active')->first();
         $opening_speeches       = OpeningSpeeches::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
-
-        # ...
         $about_competition      = AboutCompetition::where('status_data', 'Active')->first();
         $timelines              = Timeline::where('status_data', 'Active')->orderBy('date_start', 'asc')->get();
 
         # ...
         $site_area              = SiteArea::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
+
+        #
         $judges                 = Judges::where('status_data', 'Active')->orderBy('judges_name', 'asc')->get();
 
         return view('pages.main', compact(
+
+            # ...
             'about_aseanhub',
             'opening_speeches',
             'about_competition',
             'timelines',
+
+            # ...
             'site_area',
+
+            # ...
             'judges',
+
         ));
     }
 
