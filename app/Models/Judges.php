@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Judges extends Authenticatable
@@ -56,12 +57,12 @@ class Judges extends Authenticatable
     const TASK_ASSESSMENT_TWO   = 'Assessment Two';
     const TASK_FINAL_ASSESSMENT = 'Final Assessment';
 
-    public function scopeActive($query)
+    public function scopeActive(Builder $query): Builder
     {
         return $query->where('status_data', self::STATUS_ACTIVE);
     }
 
-    public function scopeOrderName($query)
+    public function scopeOrderName(Builder $query): Builder
     {
         return $query->orderBy('judges_name', 'asc');
     }

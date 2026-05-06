@@ -27,7 +27,7 @@ class LandingPageController extends Controller
         $site_area              = SiteArea::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
 
         #
-        $judges                 = Judges::where('status_data', 'Active')->orderBy('judges_name', 'asc')->get();
+        $judges                 = Judges::active()->orderName()->get();
 
         return view('pages.main', compact(
 
