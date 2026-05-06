@@ -38,4 +38,4 @@
     </x-modules.index-form>
 
 @endsection
-@include('components.sweetalert.scripts')
+{{-- @include('components.sweetalert.scripts') --}}

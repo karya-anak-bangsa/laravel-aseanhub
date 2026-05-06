@@ -1,12 +1,21 @@
 <div class="row">
 
     {{-- Judges Name --}}
-    <div class="col-sm-12">
+    <div class="col-sm-6">
         <x-modules.form-input
             label="Judges Name"
             name="judges_name"
             type="text"
             :value="$data->judges_name ?? null"
+            :required=true />
+    </div>
+
+    <div class="col-sm-6">
+        <x-modules.form-select
+            label="Task of Judges"
+            name="judges_task"
+            :options="config('asean.tasks')"
+            :value="$data->judges_task ?? null"
             :required=true />
     </div>
 
@@ -29,21 +38,18 @@
             :required=true />
     </div>
 
-    <div class="col-sm-6">
-        <x-modules.form-select
-            label="Task of Judges"
-            name="judges_task"
-            :options="config('asean.tasks')"
-            :value="$data->judges_task ?? null"
-            :required=true />
-    </div>
-
-    <div class="col-sm-6">
+    <div class="col-sm-12">
+        @if (!empty($data?->photo_url))
+            <img class="mt-2 mb-2 rounded"
+                src="{{ $data->photo_url }}"
+                alt="{{ $data->judges_name }}"
+                width="128">
+        @endif
         <x-modules.form-input
             label="Photo of Judges"
             name="judges_photo"
             type="file"
-            :required="true" />
+            :required="empty($data)" />
     </div>
 
     <div class="col-sm-6">
@@ -52,7 +58,7 @@
             name="email"
             type="email"
             :value="$data->email ?? null"
-            :required="true" />
+            :required=true />
     </div>
 
     <div class="col-sm-6">
@@ -60,7 +66,7 @@
             label="Password (min 8 characters)"
             name="password"
             type="password"
-            :required="true" />
+            :required="empty($data)" />
     </div>
 
 </div>

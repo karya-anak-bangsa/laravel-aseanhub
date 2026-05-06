@@ -46,7 +46,7 @@ class JudgesController extends Controller
             ->route('admin.judges.index')
             ->with('notify', [
                 'status' => 'info',
-                'text'   => 'Successfully created new judges data',
+                'text'   => 'The data has been successfully added',
             ]);
     }
 
@@ -66,7 +66,7 @@ class JudgesController extends Controller
             ->route('admin.judges.index')
             ->with('notify', [
                 'status' => 'info',
-                'text'   => 'Successfully updated judges data',
+                'text'   => 'The data has been successfully deleteded',
             ]);
     }
 
@@ -77,7 +77,7 @@ class JudgesController extends Controller
             ->route('admin.judges.index')
             ->with('notify', [
                 'status' => 'info',
-                'text'   => 'Successfully deleted judges data',
+                'text'   => 'The data has been successfully deleted',
             ]);
     }
 }
