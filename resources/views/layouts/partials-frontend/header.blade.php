@@ -33,16 +33,18 @@
                         <li><a href="#timeline">Timeline &amp; Event</a></li>
                     </ul>
                 </li>
+                <li><a href="#prize-pool">Prize Pool</a></li>
                 <li class="dropdown">
                     <a href="#">
                         <span>Explore Design</span><i class="bi bi-chevron-down toggle-dropdown"></i>
                     </a>
                     <ul>
                         <li><a href="#site-area">Site Map</a></li>
-                        <li><a href="#">Urban Design</a></li>
+                        <li><a href="#photo-gallery">Photo Gallery</a></li>
+                        <li><a href="#">Video Gallery</a></li>
                     </ul>
                 </li>
-                <li><a href="#prize-pool">Prize Pool</a></li>
+
                 <li><a href="#judges">Judges</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
