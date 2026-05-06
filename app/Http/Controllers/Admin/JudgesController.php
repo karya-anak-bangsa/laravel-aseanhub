@@ -41,7 +41,7 @@ class JudgesController extends Controller
 
     public function store(Request $request)
     {
-        $this->service->store($request->all());
+        $this->service->store($request);
         return redirect()
             ->route('admin.judges.index')
             ->with('notify', [

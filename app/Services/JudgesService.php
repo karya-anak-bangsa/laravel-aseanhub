@@ -3,11 +3,17 @@
 namespace App\Services;
 
 use App\Models\Judges;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+// use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class JudgesService
 {
+
+    # -------------------------------------------------------------------------- #
+    # STATISTICS                                                                 #
+    # -------------------------------------------------------------------------- #
     public function getStatistics()
     {
         $base = Judges::active();
@@ -19,6 +25,10 @@ class JudgesService
         ];
     }
 
+
+    # -------------------------------------------------------------------------- #
+    # Index + Show                                                               #
+    # -------------------------------------------------------------------------- #
     public function getAll()
     {
         return Judges::active()->orderName()->get();
@@ -29,9 +39,14 @@ class JudgesService
         return Judges::where('status_data', 'Active')->where('id_judges', $id)->firstOrFail();
     }
 
-    public function store(array $data)
+
+    # -------------------------------------------------------------------------- #
+    # ADD Data to Database                                                       #
+    # -------------------------------------------------------------------------- #
+    public function store(Request $request)
     {
-        $validated = Validator::make($data, [
+        # validate form
+        $validated = Validator::make($request->all(), [
             'judges_name'           => 'required|string|max:255',
             'origin_country'        => 'required|string|max:255',
             'origin_institution'    => 'required|string|max:255',
@@ -41,12 +56,12 @@ class JudgesService
             'password'              => 'required|string|min:8',
         ])->validate();
 
-        // hash password
+        # hash password
         $validated['password'] = Hash::make($validated['password']);
 
-        // upload photo
-        if (isset($data['judges_photo'])) {
-            $validated['judges_photo'] = $data['judges_photo']->store('judges', 'public');
+        # upload photo
+        if ($request->hasFile('judges_photo')) {
+            $validated['judges_photo'] = $request->file('judges_photo')->store('judges', 'public');
         }
 
         return Judges::create($validated);
@@ -78,6 +93,7 @@ class JudgesService
 
         return $judges->update($validated);
     }
+
 
     public function destroy(string $id)
     {
