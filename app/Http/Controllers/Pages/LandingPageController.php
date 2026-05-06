@@ -17,16 +17,30 @@ class LandingPageController extends Controller
 {
     public function index()
     {
-        # ...
+        # -------------------------------------------------------------------------------------------------------------
+        # Competition
+        # -------------------------------------------------------------------------------------------------------------
         $about_aseanhub         = AboutAseanHub::where('status_data', 'Active')->first();
         $opening_speeches       = OpeningSpeeches::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
         $about_competition      = AboutCompetition::where('status_data', 'Active')->first();
         $timelines              = Timeline::where('status_data', 'Active')->orderBy('date_start', 'asc')->get();
 
-        # ...
+        # -------------------------------------------------------------------------------------------------------------
+        # Explore Design
+        # -------------------------------------------------------------------------------------------------------------
         $site_area              = SiteArea::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
+        $photo_gallery          = [
+            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-1.webp'],
+            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-2.webp'],
+            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-3.webp'],
+            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-4.webp'],
+            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-1.webp'],
+            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-2.webp'],
+        ];
 
-        #
+        # -------------------------------------------------------------------------------------------------------------
+        # Other menubar
+        # -------------------------------------------------------------------------------------------------------------
         $judges                 = Judges::active()->orderName()->get();
 
         return view('pages.main', compact(
@@ -39,6 +53,7 @@ class LandingPageController extends Controller
 
             # ...
             'site_area',
+            'photo_gallery',
 
             # ...
             'judges',
