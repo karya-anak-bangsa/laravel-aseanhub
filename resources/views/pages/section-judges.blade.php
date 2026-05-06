@@ -1,4 +1,4 @@
-<section id="leadership" class="leadership section light-background">
+<section id="judges" class="leadership section light-background">
     <div class="container">
 
         {{-- Section Title --}}

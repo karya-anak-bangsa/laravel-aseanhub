@@ -22,15 +22,15 @@
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="">Home</a></li>
+                <li><a href="#hero">Home</a></li>
                 <li class="dropdown">
                     <a href="#">
                         <span>Competition</span><i class="bi bi-chevron-down toggle-dropdown"></i>
                     </a>
                     <ul>
                         <li><a href="#opening-speeches">Opening Speech</a></li>
-                        <li><a href="#">About Competition</a></li>
-                        <li><a href="">Timeline &amp; Event</a></li>
+                        <li><a href="#about-competition">About Competition</a></li>
+                        <li><a href="#timeline">Timeline &amp; Event</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -38,12 +38,12 @@
                         <span>Explore Design</span><i class="bi bi-chevron-down toggle-dropdown"></i>
                     </a>
                     <ul>
-                        <li><a href="#">Site Map</a></li>
+                        <li><a href="#site-area">Site Map</a></li>
                         <li><a href="#">Urban Design</a></li>
                     </ul>
                 </li>
-                <li><a href="">Prize Pool</a></li>
-                <li><a href="">Judges</a></li>
+                <li><a href="#prize-pool">Prize Pool</a></li>
+                <li><a href="#judges">Judges</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

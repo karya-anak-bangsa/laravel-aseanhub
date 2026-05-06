@@ -1,4 +1,4 @@
-<section id="campus-facilities" class="campus-facilities section light-background">
+<section id="site-area" class="campus-facilities section light-background">
     <div class="container"> {{-- data-aos="fade-up" --}}
 
         <div class="section-title">

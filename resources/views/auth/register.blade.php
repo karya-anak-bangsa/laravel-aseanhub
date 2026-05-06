@@ -7,7 +7,7 @@
         <div class="mb-3">
             <img src="{{ asset('img/dki-jakarta.webp') }}" style="height:100px">
         </div>
-        <div class="mb-5">
+        <div class="mb-4">
             <h4 class="fw-bold">Start Your Journey in ASEAN Hub</h4>
             <span class="text-muted">Create your account and join the competition today</span>
         </div>

@@ -1,4 +1,4 @@
-<section id="hero" class="hero section light-background">
+<section id="about-competition" class="hero section light-background">
     <div class="container"> {{-- data-aos="fade-up" --}}
 
         <div class="section-title">

@@ -1,4 +1,4 @@
-<section id="campus-facilities" class="campus-facilities section light-background">
+<section id="prize-pool" class="campus-facilities section light-background">
     <div class="container"> {{-- data-aos="fade-up" --}}
 
         <div class="section-title">

@@ -1,4 +1,4 @@
-<section id="alumni" class="alumni section light-background">
+<section id="timeline" class="alumni section light-background">
     <div class="container"> {{-- data-aos="fade-up" --}}
 
         <div class="section-title">
