@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="card-body profile-card">
-                    <img src="{{ $data->photoUrl }}"
+                    <img src="{{ $data->photo_url }}"
                         class="rounded-circle profile-img" width="128"
                         alt="Foto {{ $data->judges_name }}">
                 </div>

@@ -21,7 +21,7 @@ class JudgesService
 
     public function getAll()
     {
-        return Judges::where('status_data', 'Active')->orderBy('judges_name', 'asc')->get();
+        return Judges::active()->orderName()->get();
     }
 
     public function findById(string $id)

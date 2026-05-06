@@ -8,13 +8,6 @@ class VotersService
 {
     public function getStatistics()
     {
-        // $data = Voters::where('status_data', 'Active');
-        // return [
-        //     'total'     => $data->count(),
-        //     'has_voted' => (clone $data)->where('has_voted', true)->count(),
-        //     'not_voted' => (clone $data)->where('has_voted', false)->count(),
-        // ];
-
         $total          = Voters::where('status_data', 'Active')->count();
         $hasVoted       = Voters::where('status_data', 'Active')->where('has_voted', true)->count();
         $notVoted       = $total - $hasVoted;
