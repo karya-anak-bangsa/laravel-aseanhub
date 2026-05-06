@@ -85,7 +85,12 @@
                         </a>
 
                         {{-- DELETE --}}
-                        {{-- <form action="{{ route('admin.judges.destroy', $item->id_judges) }}" method="POST" class="form-delete"> --}}
+                        <form action="{{ route('admin.judges.destroy', $item->id_judges) }}" method="post" enctype="multipart/form-data" class="confirm-submit">
+                            @csrf @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash mr-2"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
