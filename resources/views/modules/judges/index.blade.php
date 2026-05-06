@@ -85,21 +85,7 @@
                         </a>
 
                         {{-- DELETE --}}
-                        <form action="{{ route('admin.judges.destroy', $item->id_judges) }}" method="POST" class="form-delete">
-
-                            @csrf
-                            @method('DELETE')
-
-                            <button type="submit" class="btn btn-sm btn-danger"
-                                data-confirm data-icon="error"
-                                data-title="Are you sure ?"
-                                data-text="This data will be permanently deleted"
-                                data-confirm-text="Yes, delete it!"
-                                data-confirm-color="#dc3546">
-
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </form>
+                        {{-- <form action="{{ route('admin.judges.destroy', $item->id_judges) }}" method="POST" class="form-delete"> --}}
                     </td>
                 </tr>
             @endforeach

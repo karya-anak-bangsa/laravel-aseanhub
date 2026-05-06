@@ -9,7 +9,7 @@
     </x-modules.callout>
 
     <x-modules.index-form>
-        <form action="{{ route('admin.judges.update', $data->id_judges) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.judges.update', $data->id_judges) }}" method="post" enctype="multipart/form-data" class="confirm-submit">
 
             @csrf
             @method('PUT')
@@ -23,13 +23,7 @@
                     </a>
                 </div>
                 <div class="col-sm-2">
-                    {{-- <button type="submit" class="btn btn-block btn-warning"> --}}
-                    <button type="submit" class="btn btn-block btn-warning"
-                        data-confirm data-icon="warning"
-                        data-title="Confirmation"
-                        data-text="Are you sure want to update this data?"
-                        data-confirm-text="Edit"
-                        data-confirm-color="#ffc107">
+                    <button type="submit" class="btn btn-block btn-warning">
                         <i class="fas fa-edit mr-2"></i>Edit
                     </button>
                 </div>
@@ -41,4 +35,4 @@
     </x-modules.index-form>
 
 @endsection
-{{-- @include('components.sweetalert.scripts') --}}
+@include('components.sweetalert.scripts-edit')

@@ -9,12 +9,12 @@
 
                     Swal.fire({
                         title: "Confirmation?",
-                        text: "Are you sure you want to update this information?",
-                        icon: 'warning',
+                        text: "Are you sure you want to save this information?",
+                        icon: 'info',
                         showCancelButton: true,
-                        confirmButtonColor: '#ffc107',
+                        confirmButtonColor: '#27a844',
                         cancelButtonColor: '#6c757e',
-                        confirmButtonText: 'Yes, Edit!',
+                        confirmButtonText: 'Yes, Save!',
                         cancelButtonText: 'Cancel',
                         reverseButtons: true
                     }).then((result) => {
