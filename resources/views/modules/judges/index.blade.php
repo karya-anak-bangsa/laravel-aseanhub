@@ -62,7 +62,7 @@
                 <tr>
                     <td class="text-center">{{ number_format($loop->iteration) }}</td>
                     <td class="text-center">
-                        <img src="{{ $item->photoUrl }}"
+                        <img src="{{ $item->photo_url }}"
                             class="rounded-circle" width="128" height="128" loading="lazy"
                             alt="Foto {{ $item->judges_name }}">
                     </td>

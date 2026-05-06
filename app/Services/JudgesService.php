@@ -24,7 +24,7 @@ class JudgesService
         return Judges::where('status_data', 'Active')->orderBy('judges_name', 'asc')->get();
     }
 
-    public function findById($id)
+    public function findById(string $id)
     {
         return Judges::where('status_data', 'Active')->where('id_judges', $id)->firstOrFail();
     }

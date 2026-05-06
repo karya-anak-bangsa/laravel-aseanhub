@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class JudgesController extends Controller
 {
-    protected $service;
+    protected JudgesService $service;
 
     public function __construct(JudgesService $service)
     {

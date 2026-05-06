@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <div class="row mb-4">
+    <div class="row mb-0">
         <div class="col-sm-12">
             <div class="card card-outline card-info">
                 <div class="card-header">
