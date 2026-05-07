@@ -24,6 +24,14 @@
                         :value="$data->title ?? null"
                         :required=true />
                 </div>
+                <div class="col-sm-12">
+                    <x-modules.form-textarea
+                        label="Description"
+                        name="description"
+                        rows="10"
+                        :value="$data->description"
+                        :required=true />
+                </div>
                 {{-- col --}}
             </div>
             {{-- row --}}

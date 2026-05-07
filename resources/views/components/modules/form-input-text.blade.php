@@ -4,8 +4,7 @@
         {{ $label }}
     </label>
 
-    <input
-        type="text" class="form-control border-dark"
+    <input type="text" class="form-control border-dark"
         name="{{ $name }}" id="{{ $name }}"
         value="{{ old($name, $value) }}" placeholder="{{ $placeholder }}">
 

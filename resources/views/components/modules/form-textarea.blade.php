@@ -4,7 +4,7 @@
         {{ $label }}
     </label>
 
-    <textarea class="form-control border-dark summernote" name="{{ $name }}" id="{{ $name }}" rows={{ $rows }}>
+    <textarea class="form-control border-dark summernote" name="{{ $name }}" id="{{ $name }}" rows="{{ $rows }}" placeholder="{{ $placeholder }}">
         {{ old($name, $value) }}
     </textarea>
 
