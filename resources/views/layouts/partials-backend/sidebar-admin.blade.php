@@ -81,4 +81,10 @@
             <p>Site Area</p>
         </a>
     </li>
+    <li class="nav-item">
+        <a href="{{ route('admin.photo-gallery.index') }}" class="nav-link @yield('nav-photo-gallery')">
+            <i class="nav-icon fas fa-camera"></i>
+            <p>Photo Gallery</p>
+        </a>
+    </li>
 @endif

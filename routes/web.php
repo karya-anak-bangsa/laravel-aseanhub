@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\OpeningSpeechesController as Adm_OpeningSpeechesC
 use App\Http\Controllers\Admin\AboutCompetitionController as Adm_AboutCompetitionController;
 use App\Http\Controllers\Admin\TimelineController as Adm_TimelineController;
 use App\Http\Controllers\Admin\SiteAreaController as Adm_SiteAreaController;
+use App\Http\Controllers\Admin\PhotoGalleryController as Adm_PhotoGalleryController;
 
 # halaman backend - Judges
 
@@ -69,6 +70,7 @@ Route::middleware(['auth:admin', 'role:admin'])->prefix('admin')->name('admin.')
         Route::resource('about-competition', Adm_AboutCompetitionController::class);
         Route::resource('timeline', Adm_TimelineController::class);
         Route::resource('site-area', Adm_SiteAreaController::class);
+        Route::resource('photo-gallery', Adm_PhotoGalleryController::class);
     });
 
 # ------------------------------------------------------------------------------------------------- #
