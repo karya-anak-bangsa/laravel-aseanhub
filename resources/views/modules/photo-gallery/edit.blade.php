@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <x-modules.form-input-text
-                        label="Name of Policy Maker"
+                        label="Title"
                         name="title"
                         :value="$data->title ?? null"
                         :required=true />
