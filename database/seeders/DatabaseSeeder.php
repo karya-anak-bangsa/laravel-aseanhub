@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             AboutCompetitionSeeder::class,
             TimelineSeeder::class,
             SiteAreaSeeder::class,
+            PhotoGallerySeeder::class,
 
         ]);
     }
