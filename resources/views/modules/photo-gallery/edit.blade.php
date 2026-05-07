@@ -24,7 +24,10 @@
                         :value="$data->title ?? null"
                         :required=true />
                 </div>
+                {{-- col --}}
             </div>
+            {{-- row --}}
+
             <div class="row">
                 <div class="col-sm-2">
                     <a href="{{ route('admin.photo-gallery.index') }}" class="btn btn-block btn-secondary">
