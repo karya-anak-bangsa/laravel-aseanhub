@@ -18,24 +18,11 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="title" class="required">Title</label>
-                        <input type="text" class="form-control border-dark" name="title" id="title" value="{{ old('title', $data->title ?? '') }}">
-                        @error('title')
-                            <small class="text-danger">{{ $message }}</small>
-                        @enderror
-                    </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="description" class="required">Description</label>
-                        <textarea class="form-control border-dark summernote" name="description" id="description" rows="15">
-                            {{ old('description', $data->description ?? '') }}
-                        </textarea>
-                        @error('description')
-                            <small class="text-danger">{{ $message }}</small>
-                        @enderror
-                    </div>
+                    <x-modules.form-input-text
+                        label="Name of Policy Maker"
+                        name="title"
+                        :value="$data->title ?? null"
+                        :required=true />
                 </div>
             </div>
             <div class="row">
