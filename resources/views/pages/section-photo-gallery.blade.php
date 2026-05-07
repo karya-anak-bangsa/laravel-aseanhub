@@ -1,3 +1,7 @@
+@php
+    $layouts = ['col-md-6 col-lg-4', 'col-md-6 col-lg-8', 'col-md-6 col-lg-8', 'col-md-6 col-lg-4'];
+@endphp
+
 <section id="photo-gallery" class="students-life section light-background">
 
     <div class="container section-title">
@@ -8,72 +12,19 @@
     <div class="container">
         <div class="moments-gallery">
             <div class="row g-3">
-                <div class="col-md-6 col-lg-4">
-                    <a href="{{ asset('storage/photo-gallery/photo-gallery-stasiun-2.webp') }}" class="moment-item glightbox" data-gallery="campus-moments">
-                        <img src="{{ asset('storage/photo-gallery/photo-gallery-stasiun-2.webp') }}" class="img-fluid" loading="lazy" alt="Campus Moment">
-                        <div class="moment-overlay">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-8">
-                    <a href="{{ asset('storage/photo-gallery/photo-gallery-stasiun-1.webp') }}" class="moment-item glightbox" data-gallery="campus-moments">
-                        <img src="{{ asset('storage/photo-gallery/photo-gallery-stasiun-1.webp') }}" class="img-fluid" loading="lazy" alt="Campus Moment">
-                        <div class="moment-overlay">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-8">
-                    <a href="{{ asset('storage/photo-gallery/photo-gallery-stasiun-3.webp') }}" class="moment-item glightbox" data-gallery="campus-moments">
-                        <img src="{{ asset('storage/photo-gallery/photo-gallery-stasiun-3.webp') }}" class="img-fluid" loading="lazy" alt="Campus Moment">
-                        <div class="moment-overlay">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="{{ asset('storage/photo-gallery/photo-gallery-stasiun-2.webp') }}" class="moment-item glightbox" data-gallery="campus-moments">
-                        <img src="{{ asset('storage/photo-gallery/photo-gallery-stasiun-2.webp') }}" class="img-fluid" loading="lazy" alt="Campus Moment">
-                        <div class="moment-overlay">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="{{ asset('storage/photo-gallery/photo-gallery-stasiun-4.webp') }}" class="moment-item glightbox" data-gallery="campus-moments">
-                        <img src="{{ asset('storage/photo-gallery/photo-gallery-stasiun-4.webp') }}" class="img-fluid" loading="lazy" alt="Campus Moment">
-                        <div class="moment-overlay">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-8">
-                    <a href="{{ asset('storage/photo-gallery/photo-gallery-stasiun-4.webp') }}" class="moment-item glightbox" data-gallery="campus-moments">
-                        <img src="{{ asset('storage/photo-gallery/photo-gallery-stasiun-4.webp') }}" class="img-fluid" loading="lazy" alt="Campus Moment">
-                        <div class="moment-overlay">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-8">
-                    <a href="{{ asset('storage/photo-gallery/photo-gallery-stasiun-3.webp') }}" class="moment-item glightbox" data-gallery="campus-moments">
-                        <img src="{{ asset('storage/photo-gallery/photo-gallery-stasiun-3.webp') }}" class="img-fluid" loading="lazy" alt="Campus Moment">
-                        <div class="moment-overlay">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="{{ asset('storage/photo-gallery/photo-gallery-stasiun-2.webp') }}" class="moment-item glightbox" data-gallery="campus-moments">
-                        <img src="{{ asset('storage/photo-gallery/photo-gallery-stasiun-2.webp') }}" class="img-fluid" loading="lazy" alt="Campus Moment">
-                        <div class="moment-overlay">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </div>
-                    </a>
-                </div>
+                @foreach ($photo_gallery as $index => $gallery)
+                    <div class="{{ $layouts[$index % count($layouts)] }}">
+                        <a href="{{ $gallery->image_url }}" class="moment-item glightbox" data-gallery="campus-moments">
+                            <img src="{{ $gallery->image_url }}" alt="{{ $gallery->title }}" class="img-fluid" loading="lazy">
+                            <div class="moment-overlay">
+                                <i class="bi bi-arrows-fullscreen"></i>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
+        {{-- moments-gallery --}}
     </div>
+    {{-- -container --}}
 </section>

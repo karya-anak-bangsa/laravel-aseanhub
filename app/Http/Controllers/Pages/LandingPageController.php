@@ -11,6 +11,7 @@ use App\Models\OpeningSpeeches;
 use App\Models\AboutCompetition;
 use App\Models\Timeline;
 use App\Models\SiteArea;
+use App\Models\PhotoGallery;
 use App\Models\Judges;
 
 class LandingPageController extends Controller
@@ -29,14 +30,8 @@ class LandingPageController extends Controller
         # Explore Design
         # -------------------------------------------------------------------------------------------------------------
         $site_area              = SiteArea::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
-        $photo_gallery          = [
-            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-1.webp'],
-            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-2.webp'],
-            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-3.webp'],
-            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-4.webp'],
-            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-1.webp'],
-            ['photo' => 'storage/photo-gallery/photo-gallery-stasiun-2.webp'],
-        ];
+        $photo_gallery = PhotoGallery::where('status_data', 'Active')->orderBy('sort_order', 'asc')->get();
+
 
         # -------------------------------------------------------------------------------------------------------------
         # Other menubar
