@@ -28,7 +28,6 @@
                     <x-modules.form-textarea
                         label="Description"
                         name="description"
-                        rows="10"
                         :value="$data->description"
                         :required=true />
                 </div>
