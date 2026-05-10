@@ -8,17 +8,23 @@ use Illuminate\View\Component;
 
 class FormInputFile extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
-    {
-        //
+    public ?string $label;
+    public ?string $name;
+    public ?string $preview;
+    public bool $required;
+
+    public function __construct(
+        $label              = null,
+        $name               = null,
+        $preview            = null,
+        $required           = false,
+    ) {
+        $this->label        = $label;
+        $this->name         = $name;
+        $this->preview      = $preview;
+        $this->required     = $required;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     */
     public function render(): View|Closure|string
     {
         return view('components.modules.form-input-file');
