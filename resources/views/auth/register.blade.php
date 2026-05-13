@@ -17,38 +17,41 @@
         <div class="card-body">
             <form action="{{ route('register.store') }}" method="post">
                 @csrf
-                <div class="mb-4">
-                    <label for="role" class="form-label">Join As</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-users"></i></span>
-                        <select class="form-select" name="role" id="role">
-                            <option value="" disabled selected></option>
-                            <option value="participants">Participants</option>
-                            <option value="voters">Voters</option>
-                        </select>
+
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <label for="role" class="form-label">Join As</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-users"></i></span>
+                            <select class="form-select" name="role" id="role">
+                                <option value="" disabled selected></option>
+                                <option value="participants">Participants</option>
+                                <option value="voters">Voters</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="form-label">Email</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                        <input type="email" class="form-control" name="email" id="email" autocomplete="email">
+                    <div class="col-lg-12 mb-4">
+                        <label for="email" class="form-label">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" class="form-control" name="email" id="email" autocomplete="email">
+                        </div>
                     </div>
-                </div>
-                <div class="mb-4">
-                    <label for="password" class="form-label">Password</label>
-                    <div class="input-group">
-                        <span class="input-group-text" id="togglePassword">
-                            <i class="fas fa-eye" id="eyeIcon"></i>
-                        </span>
-                        <input type="password" class="form-control" name="password" id="password">
+                    <div class="col-lg-12 mb-4">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="togglePassword">
+                                <i class="fas fa-eye" id="eyeIcon"></i>
+                            </span>
+                            <input type="password" class="form-control" name="password" id="password">
+                        </div>
+                        <small class="text-muted">Password minimum 8 characters</small>
                     </div>
-                    <small class="text-muted">Password minimum 8 characters</small>
-                </div>
-                <div class="mb-0">
-                    <button type="submit" class="btn btn-login btn-warning w-100">
-                        <i class="fas fa-user-plus me-2"></i>Register
-                    </button>
+                    <div class="col-lg-12 mb-0">
+                        <button type="submit" class="btn btn-login btn-warning w-100">
+                            <i class="fas fa-user-plus me-2"></i>Register
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>

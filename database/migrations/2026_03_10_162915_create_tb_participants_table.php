@@ -25,6 +25,11 @@ return new class extends Migration
             $table->enum('status_registration', ['Pending', 'Rejected', 'Verified'])->default('Pending');
             $table->enum('status_urban_design', ['Not Submitted', 'Submitted'])->default('Not Submitted');
 
+            # status urban design
+            $table->enum('status_assessment_one', ['Approved', 'Pending', 'Rejected'])->default('Pending');
+            $table->enum('status_assessment_two', ['Approved', 'Pending', 'Rejected'])->default('Pending');
+            $table->enum('status_final_assessment', ['Approved', 'Pending', 'Rejected'])->default('Pending');
+
             # Proses Auth
             $table->string('email')->unique();
             $table->string('password');
