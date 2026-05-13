@@ -78,15 +78,15 @@
                             <table class="table border-bottom">
                                 <tr>
                                     <td width="50%" class="text-left text-bold">Assessment One</td>
-                                    <td width="50%" class="text-right">-</td>
+                                    <td width="50%" class="text-right">{!! $data->badge_assessment_one ?? '-' !!}</td>
                                 </tr>
                                 <tr>
                                     <td width="50%" class="text-left text-bold">Assessment Two</td>
-                                    <td width="50%" class="text-right">-</td>
+                                    <td width="50%" class="text-right">{!! $data->badge_assessment_two ?? '-' !!}</td>
                                 </tr>
                                 <tr>
                                     <td width="50%" class="text-left text-bold">Final Assessment</td>
-                                    <td width="50%" class="text-right">-</td>
+                                    <td width="50%" class="text-right">{!! $data->badge_assessment_final ?? '-' !!}</td>
                                 </tr>
                             </table>
                         </div>

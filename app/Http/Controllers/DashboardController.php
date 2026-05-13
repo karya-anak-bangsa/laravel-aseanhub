@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    protected $service;
+    protected DashboardService $service;
 
     public function __construct(DashboardService $service)
     {

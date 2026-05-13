@@ -59,10 +59,10 @@ class Participants extends Authenticatable
     public function getBadgeRegistrationAttribute()
     {
         return match ($this->status_registration) {
-            'Verified'  => '<span class="badge badge-success badge-custom">Verified</span>',
-            'Pending'   => '<span class="badge badge-warning badge-custom">Pending</span>',
-            'Rejected'  => '<span class="badge badge-danger badge-custom">Rejected</span>',
-            default     => '<span class="badge badge-secondary">Unknown</span>',
+            'Verified'          => '<span class="badge badge-success badge-custom">Verified</span>',
+            'Pending'           => '<span class="badge badge-warning badge-custom">Pending</span>',
+            'Rejected'          => '<span class="badge badge-danger badge-custom">Rejected</span>',
+            default             => '<span class="badge badge-secondary">Unknown</span>',
         };
     }
 
@@ -71,6 +71,36 @@ class Participants extends Authenticatable
         return match ($this->status_urban_design) {
             'Submitted'         => '<span class="badge badge-success badge-custom">Submitted</span>',
             'Not Submitted'     => '<span class="badge badge-danger badge-custom">Not Submitted</span>',
+            default             => '<span class="badge badge-secondary">Unknown</span>',
+        };
+    }
+
+    public function getBadgeAssessmentOneAttribute()
+    {
+        return match ($this->status_assessment_one) {
+            'Approved'          => '<span class="badge badge-success badge-custom">Approved</span>',
+            'Pending'           => '<span class="badge badge-warning badge-custom">Pending</span>',
+            'Rejected'          => '<span class="badge badge-danger badge-custom">Rejected</span>',
+            default             => '<span class="badge badge-secondary">Unknown</span>',
+        };
+    }
+
+    public function getBadgeAssessmentTwoAttribute()
+    {
+        return match ($this->status_assessment_one) {
+            'Approved'          => '<span class="badge badge-success badge-custom">Approved</span>',
+            'Pending'           => '<span class="badge badge-warning badge-custom">Pending</span>',
+            'Rejected'          => '<span class="badge badge-danger badge-custom">Rejected</span>',
+            default             => '<span class="badge badge-secondary">Unknown</span>',
+        };
+    }
+
+    public function getBadgeAssessmentFinalAttribute()
+    {
+        return match ($this->status_assessment_one) {
+            'Approved'          => '<span class="badge badge-success badge-custom">Approved</span>',
+            'Pending'           => '<span class="badge badge-warning badge-custom">Pending</span>',
+            'Rejected'          => '<span class="badge badge-danger badge-custom">Rejected</span>',
             default             => '<span class="badge badge-secondary">Unknown</span>',
         };
     }
