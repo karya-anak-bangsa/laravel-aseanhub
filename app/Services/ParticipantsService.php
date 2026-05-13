@@ -31,7 +31,7 @@ class ParticipantsService
             ->get();
     }
 
-    public function findById($id)
+    public function findById(string $id)
     {
         return Participants::where('status_data', 'Active')->findOrFail($id);
     }

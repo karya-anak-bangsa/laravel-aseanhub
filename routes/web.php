@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\PhotoGalleryController as Adm_PhotoGalleryControl
 # halaman backend - Judges
 
 # halaman backend - Participants
+use App\Http\Controllers\Participants\UpdateProfileController as Prp_UpdateProfileController;
 
 # halaman backend - Voters
 
@@ -87,6 +88,7 @@ Route::middleware(['auth:judges', 'role:judges'])->prefix('judges')->name('judge
 Route::middleware(['auth:participants', 'role:participants'])->prefix('participants')->name('participants.')
     ->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'showParticipants'])->name('dashboard');
+        Route::resource('update-profile', Prp_UpdateProfileController::class);
     });
 
 # ------------------------------------------------------------------------------------------------- #

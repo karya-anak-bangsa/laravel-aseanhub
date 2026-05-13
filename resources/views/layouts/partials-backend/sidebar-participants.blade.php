@@ -10,7 +10,7 @@
     {{-- 2. PROFILE PARTICIPANT --}}
     <li class="nav-header mt-2">PROFILE PARTICIPANT</li>
     <li class="nav-item">
-        <a href="" class="nav-link @yield('nav-test')">
+        <a href="{{ route('participants.update-profile.show', auth('participants')->user()->id_participants) }}" class="nav-link @yield('nav-participants')">
             <i class="nav-icon fa-solid fa-book"></i>
             <p>Update Profile</p>
         </a>
