@@ -25,6 +25,8 @@ use App\Http\Controllers\Admin\PhotoGalleryController as Adm_PhotoGalleryControl
 
 # halaman backend - Participants
 use App\Http\Controllers\Participants\UpdateProfileController as Prp_UpdateProfileController;
+use App\Http\Controllers\Participants\UrbanDesignController as Prp_UrbanDesignController;
+use App\Http\Controllers\Participants\AssessmentController as Prp_AssessmentController;
 
 # halaman backend - Voters
 
@@ -89,6 +91,8 @@ Route::middleware(['auth:participants', 'role:participants'])->prefix('participa
     ->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'showParticipants'])->name('dashboard');
         Route::resource('update-profile', Prp_UpdateProfileController::class);
+        Route::resource('urban-design', Prp_UrbanDesignController::class);
+        Route::resource('assessment', Prp_AssessmentController::class);
     });
 
 # ------------------------------------------------------------------------------------------------- #

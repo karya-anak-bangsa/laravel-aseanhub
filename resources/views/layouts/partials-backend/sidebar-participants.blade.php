@@ -25,7 +25,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="" class="nav-link @yield('nav-test')">
+        <a href="{{ route('participants.assessment.index') }}" class="nav-link @yield('nav-assessment')">
             <i class="nav-icon fa-solid fa-book"></i>
             <p>Assessment Results</p>
         </a>
