@@ -19,6 +19,25 @@
                 @csrf
 
                 <div class="row">
+                    {{-- <div class="col-lg-6 mb-4">
+                        <label for="role" class="form-label">Join As</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-users"></i></span>
+                            <select class="form-select" name="role" id="role">
+                                <option value="" disabled selected></option>
+                                <option value="participants">Participants</option>
+                                <option value="voters">Voters</option>
+                            </select>
+                        </div>
+                    </div> --}}
+                    {{-- <div class="col-lg-6 mb-4">
+                        <label for="email" class="form-label">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" class="form-control" name="email" id="email" autocomplete="email">
+                        </div>
+                    </div> --}}
+
                     <div class="col-lg-12 mb-4">
                         <label for="role" class="form-label">Join As</label>
                         <div class="input-group">

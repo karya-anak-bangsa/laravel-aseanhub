@@ -36,7 +36,7 @@
             #auth-left {
                 background-image:
                     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                    url('{{ asset('/img/default-hero.webp') }}');
+                    url('{{ asset('/img/hero-monas-2.png') }}');
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -99,13 +99,13 @@
 
         <main class="container-fluid">
             <div class="row min-vh-100">
-                <div class="col-sm-8 d-flex flex-column align-items-center justify-content-center p-0" id="auth-left">
+                <div class="col-sm-7 d-flex flex-column align-items-center justify-content-center p-0" id="auth-left">
                     <div class="text-center">
-                        <h1 class="mb-3">ASEAN Hub International Design Competition</h1>
+                        <h1 class="mb-3">ASEAN Hub International <br> Design Competition</h1>
                         <p class="lead mb-3">Join the competition, submit your ideas, and be part of ASEAN’s future.</p>
                     </div>
                 </div>
-                <div class="col-sm-4 d-flex flex-column align-items-center justify-content-center p-0" id="auth-right">
+                <div class="col-sm-5 d-flex flex-column align-items-center justify-content-center p-0" id="auth-right">
                     @yield('content')
                 </div>
                 {{-- col --}}
