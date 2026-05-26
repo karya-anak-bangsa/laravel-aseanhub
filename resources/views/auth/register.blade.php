@@ -38,7 +38,7 @@
                         </div>
                     </div> --}}
 
-                    <div class="col-lg-12 mb-4">
+                    <div class="col-lg-12 mb-3">
                         <label for="role" class="form-label">Join As</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-users"></i></span>
@@ -49,14 +49,21 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-12 mb-4">
+                    <div class="col-lg-12 mb-3">
+                        <label for="full_name" class="form-label">Full Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" name="full_name" id="full_name">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-3">
                         <label for="email" class="form-label">Email</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                             <input type="email" class="form-control" name="email" id="email" autocomplete="email">
                         </div>
                     </div>
-                    <div class="col-lg-12 mb-4">
+                    <div class="col-lg-12 mb-3">
                         <label for="password" class="form-label">Password</label>
                         <div class="input-group">
                             <span class="input-group-text" id="togglePassword">

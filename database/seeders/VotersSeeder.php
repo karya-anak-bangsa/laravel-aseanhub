@@ -11,6 +11,7 @@ class VotersSeeder extends Seeder
     public function run(): void
     {
         Voters::truncate();
+        Voters::factory()->count(30)->create();
 
         Voters::create([
             'voters_name'           => 'Example Voters',
@@ -20,7 +21,5 @@ class VotersSeeder extends Seeder
             'email'                 => 'example.voters@gmail.com',
             'password'              => Hash::make('12341234'),
         ]);
-
-        // Voters::factory()->count(30)->create();
     }
 }

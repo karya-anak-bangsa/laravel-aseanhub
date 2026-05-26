@@ -12,7 +12,7 @@ class ParticipantsSeeder extends Seeder
     {
         # data dummy
         Participants::truncate();
-        // Participants::factory()->count(30)->create();
+        Participants::factory()->count(30)->create();
 
         # data example
         Participants::create([
