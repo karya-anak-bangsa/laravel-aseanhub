@@ -36,7 +36,7 @@
             #auth-left {
                 background-image:
                     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                    url('{{ asset('/img/hero-monas-2.png') }}');
+                    url("{{ asset('/img/hero-monas-2.png') }}");
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
