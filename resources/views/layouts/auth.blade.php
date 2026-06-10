@@ -13,7 +13,7 @@
         {{-- Fonts --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap">
 
         {{-- Bootstrap 5.3.8 --}}
         <link rel="stylesheet" href="{{ asset('template-auth/bootstrap-5.3.8/dist/css/bootstrap.min.css') }}">
@@ -24,10 +24,9 @@
         {{-- custom css for layouts auth --}}
         <style>
             :root {
-                --default-font: "Quicksand", "Segoe UI", sans-serif;
-                --heading-font: "Josefin Sans", sans-serif;
+                --default-font: "Quicksand", "Inter", "Roboto", "Segoe UI", sans-serif;
+                --heading-font: "Raleway", sans-serif;
                 --nav-font: "Poppins", sans-serif;
-                --dashboard-font: "Roboto", sans-serif;
             }
 
             :root {
@@ -47,7 +46,7 @@
             h5,
             h6 {
                 font-weight: 700;
-                font-family: var(--default-font);
+                font-family: var(--heading-font);
             }
 
             small,
