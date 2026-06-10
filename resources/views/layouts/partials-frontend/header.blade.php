@@ -3,9 +3,9 @@
     <div class="header-top d-none d-lg-flex align-items-center justify-content-between">
         <div class="contact-info">
             <a href="" class="logo d-flex align-items-center">
-                <img src="{{ asset('img/logo-asean.png') }}" alt="">
                 <img src="{{ asset('img/dki-jakarta.webp') }}" alt="">
-                <img src="{{ asset('img/dki-500.webp') }}" alt="">
+                <img src="{{ asset('img/logo-asean.png') }}" alt="">
+                {{-- <img src="{{ asset('img/dki-500.webp') }}" alt=""> --}}
             </a>
         </div>
         <div class="social-links">
