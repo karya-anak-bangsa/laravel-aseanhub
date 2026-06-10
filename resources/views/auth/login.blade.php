@@ -2,16 +2,11 @@
 @section('content')
     <div class="text-center">
         <div class="mb-3">
-            <img src="{{ asset('img/dki-jakarta.webp') }}" style="height:100px">
+            <img src="{{ asset('img/dki-jakarta.webp') }}" style="height:90px">
         </div>
         <div class="mb-5">
-            {{-- <h4 class="fw-bold">Welcome to ASEAN HUB</h4>
-            <span class="text-muted">Sign in to your account</span> --}}
-
-            <h4 class="fw-bold">Welcome to ASEAN Hub</h4>
-            <span class="text-muted">
-                Sign in to continue your journey in the competition
-            </span>
+            <h3>Welcome to ASEAN Hub</h3>
+            <span>Sign in to continue your journey in the competition</span>
         </div>
     </div>
     <div class="card border-0 px-2 py-2" id="auth-card">

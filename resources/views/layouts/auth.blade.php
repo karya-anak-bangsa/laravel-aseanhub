@@ -10,6 +10,11 @@
         {{-- set icon --}}
         <link rel="icon" href="{{ asset('img/dki-jakarta.webp') }}" type="image/png">
 
+        {{-- Fonts --}}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
         {{-- Bootstrap 5.3.8 --}}
         <link rel="stylesheet" href="{{ asset('template-auth/bootstrap-5.3.8/dist/css/bootstrap.min.css') }}">
 
@@ -18,6 +23,13 @@
 
         {{-- custom css for layouts auth --}}
         <style>
+            :root {
+                --default-font: "Quicksand", "Segoe UI", sans-serif;
+                --heading-font: "Josefin Sans", sans-serif;
+                --nav-font: "Poppins", sans-serif;
+                --dashboard-font: "Roboto", sans-serif;
+            }
+
             :root {
                 --warning-500: #ffb703;
                 --warning-600: #f0a500;
@@ -28,9 +40,26 @@
                 min-height: 100vh;
             }
 
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-weight: 700;
+                font-family: var(--default-font);
+            }
+
+            small,
+            span,
+            p {
+                font-family: var(--default-font);
+            }
+
             /* LEFT SIDE */
             #auth-left {
                 min-height: 100vh;
+                background-color: #f5f6fa;
             }
 
             #auth-left {
@@ -45,24 +74,25 @@
 
             #auth-left h1 {
                 font-weight: 700;
-                color: #fefefe;
+                color: #f5f6fa;
             }
 
             #auth-left p {
                 font-weight: 400;
-                color: #fefefe;
+                color: #f5f6fa;
             }
 
             /* RIGHT SIDE */
             #auth-right {
                 min-height: 100vh;
+                background-color: #f5f6fa;
             }
 
             #auth-card {
                 width: 95%;
                 height: auto;
                 border-radius: .5rem;
-                box-shadow: 0 5px 50px rgba(0, 0, 0, .08);
+                box-shadow: 0 10px 60px rgba(0, 0, 0, 0.05);
             }
 
             .form-label {
@@ -99,13 +129,13 @@
 
         <main class="container-fluid">
             <div class="row min-vh-100">
-                <div class="col-sm-8 d-flex flex-column align-items-center justify-content-center p-0" id="auth-left">
+                <div class="col-sm-7 d-flex flex-column align-items-center justify-content-center p-0" id="auth-left">
                     <div class="text-center">
                         <h1 class="mb-3">ASEAN Hub International <br> Design Competition</h1>
                         <p class="lead mb-3">Join the competition, submit your ideas, and be part of ASEAN’s future.</p>
                     </div>
                 </div>
-                <div class="col-sm-4 d-flex flex-column align-items-center justify-content-center p-0" id="auth-right">
+                <div class="col-sm-5 d-flex flex-column align-items-center justify-content-center p-0" id="auth-right">
                     @yield('content')
                 </div>
                 {{-- col --}}
