@@ -16,17 +16,17 @@
                 <div class="mb-4">
                     <label for="email" class="form-label">Email</label>
                     <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                         <input type="email" class="form-control" name="email" id="email" autocomplete="email">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                     </div>
                 </div>
                 <div class="mb-4">
                     <label for="password" class="form-label">Password</label>
                     <div class="input-group">
+                        <input type="password" class="form-control" name="password" id="password">
                         <span class="input-group-text" id="togglePassword">
                             <i class="fas fa-eye" id="eyeIcon"></i>
                         </span>
-                        <input type="password" class="form-control" name="password" id="password">
                     </div>
                     <small class="text-muted">Password minimum 8 characters</small>
                 </div>
