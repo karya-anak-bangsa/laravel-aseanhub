@@ -1,17 +1,17 @@
 @extends('layouts.auth')
+
+{{-- push styles --}}
+@include('components.notify.styles')
+
+{{-- content --}}
+@section('nav-login', 'active')
 @section('content')
-    <div class="text-center">
-        <div class="mb-3">
-            <img src="{{ asset('img/dki-jakarta.webp') }}" style="height:90px">
-        </div>
-        <div class="mb-5">
-            <h3>Welcome to ASEAN Hub</h3>
-            <span>Sign in to continue your journey in the competition</span>
-        </div>
-    </div>
+
+    @include('components.notify.alert')
+
     <div class="card border-0 px-2 py-2" id="auth-card">
         <div class="card-body">
-            <form action="{{ route('login.process') }}" method="post">
+            <form action="{{ route('login.process') }}" method="post" enctype="multipart/form-data" class="confirm-submit">
                 @csrf
                 <div class="mb-4">
                     <label for="email" class="form-label">Email</label>
@@ -40,5 +40,18 @@
         {{-- card-body --}}
     </div>
     {{-- card --}}
+
+    <div class="mt-3">
+        <a href="{{ route('register') }}" class="text-dark fw-bold">Create an account</a>
+    </div>
 @endsection
+
+{{-- push scripts --}}
 @include('components.password.scripts')
+@include('components.notify.scripts')
+@include('components.sweetalert.scripts-alert', [
+    'title' => 'Sign In?',
+    'text' => 'Please confirm to continue to your account.',
+    'icon' => 'question',
+    'confirmButtonText' => 'Yes, Sign In',
+])

@@ -46,12 +46,13 @@
             h5,
             h6 {
                 font-weight: 700;
-                font-family: var(--heading-font);
+                font-family: var(--default-font);
             }
 
             small,
             span,
-            p {
+            p,
+            a {
                 font-family: var(--default-font);
             }
 
@@ -112,6 +113,7 @@
 
             .btn-login {
                 font-weight: bold;
+                font-family: var(--default-font);
                 border-radius: .5rem;
                 padding: 0.55rem 0.55rem;
             }
@@ -135,6 +137,16 @@
                     </div>
                 </div>
                 <div class="col-sm-5 d-flex flex-column align-items-center justify-content-center p-0" id="auth-right">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <img src="{{ asset('img/dki-jakarta.webp') }}" style="height:90px">
+                        </div>
+                        <div class="mb-4">
+                            <h3>Welcome to ASEAN Hub</h3>
+                            {{-- <span>Sign in to continue your journey in the competition</span> --}}
+                            {{-- <span class="text-muted">Create your account and join the competition today</span> --}}
+                        </div>
+                    </div>
                     @yield('content')
                 </div>
                 {{-- col --}}

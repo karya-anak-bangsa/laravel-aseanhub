@@ -24,27 +24,42 @@ class LoginController extends Controller
         # step 2. Check hak akses
         if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.dashboard')->with('notify', [
+                'type'      => 'success',
+                'message'   => 'Welcome to Dashboard Administrator.',
+            ]);
         }
 
         if (Auth::guard('judges')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('judges.dashboard');
+            return redirect()->route('judges.dashboard')->with('notify', [
+                'type'      => 'success',
+                'message'   => 'Welcome to Dashboard Judges.',
+            ]);
         }
 
         if (Auth::guard('participants')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('participants.dashboard');
+            return redirect()->route('participants.dashboard')->with('notify', [
+                'type'      => 'success',
+                'message'   => 'Welcome to Dashboard Participants.',
+            ]);
         }
 
         if (Auth::guard('voters')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('voters.dashboard');
+            return redirect()->route('voters.dashboard')->with('notify', [
+                'type'      => 'success',
+                'message'   => 'Welcome to Dashboard Voters.',
+            ]);
         }
 
-        return back()->withErrors([
-            'email' => 'Make sure your email and password are correct',
-        ])->withInput();
+
+        return back()->withInput($request->only('email'))
+            ->with('notify', [
+                'type'      => 'error',
+                'message'   => 'Invalid email or password.',
+            ]);
     }
 
     public function logout(Request $request)

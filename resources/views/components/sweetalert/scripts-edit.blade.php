@@ -12,7 +12,7 @@
                         text: "Are you sure you want to update this information?",
                         icon: 'warning',
                         showCancelButton: true,
-                        confirmButtonColor: '#e1a801',
+                        confirmButtonColor: '#e6ae06',
                         cancelButtonColor: '#6c757e',
                         confirmButtonText: 'Yes, Edit!',
                         cancelButtonText: 'Cancel',

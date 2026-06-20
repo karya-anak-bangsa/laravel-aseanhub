@@ -1,6 +1,14 @@
 @extends('layouts.backend')
+
+{{-- push styles --}}
+@include('components.notify.styles')
+@include('components.datatables.styles')
+
+{{-- content --}}
 @section('nav-dashboard', 'active')
 @section('content')
+
+    @include('components.notify.alert')
 
     {{-- Benner --}}
     <x-modules.dashboard-banner>
@@ -100,3 +108,7 @@
     </div>
 
 @endsection
+
+{{-- push scripts --}}
+@include('components.notify.scripts')
+@include('components.datatables.scripts')

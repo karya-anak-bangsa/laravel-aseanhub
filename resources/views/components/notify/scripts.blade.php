@@ -1,7 +1,7 @@
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/simple-notify/dist/simple-notify.min.js"></script>
     <script>
-        $(function() {
+        document.addEventListener("DOMContentLoaded", function() {
 
             const el = document.getElementById('notify-data');
             if (!el) return;
