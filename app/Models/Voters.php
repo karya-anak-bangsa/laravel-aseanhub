@@ -29,6 +29,9 @@ class Voters extends Authenticatable
         'has_voted',
         'email',
         'password',
+        'otp_code',
+        'otp_expired_at',
+        'email_verified_at',
         'status_data',
     ];
 

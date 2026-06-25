@@ -34,6 +34,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
 
+            # Email OTP
+            $table->string('otp_code')->nullable();
+            $table->dateTime('otp_expired_at')->nullable();
+            $table->dateTime('email_verified_at')->nullable();
+
             # soft delete
             $table->enum('status_data', ['Active', 'Not Active'])->default('Active');
             $table->timestamps();

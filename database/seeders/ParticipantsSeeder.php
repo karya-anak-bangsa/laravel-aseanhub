@@ -24,8 +24,13 @@ class ParticipantsSeeder extends Seeder
             'participants_name_5'   => null,
             'participants_country'  => 'Indonesia',
             'participants_phone'    => '081912341234',
+
             'email'                 => 'example.participants@gmail.com',
             'password'              => Hash::make('12341234'),
+
+            'email_verified_at'     => now(),
+            'otp_code'              => null,
+            'otp_expired_at'        => null,
         ]);
     }
 }

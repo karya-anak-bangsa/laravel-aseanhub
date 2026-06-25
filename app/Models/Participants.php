@@ -29,19 +29,27 @@ class Participants extends Authenticatable
         'participants_name_5',
         'participants_country',
         'participants_phone',
+
         'status_registration',
         'status_urban_design',
         'status_assessment_one',
         'status_assessment_two',
         'status_final_assessment',
+
         'email',
         'password',
+
+        'otp_code',
+        'otp_expired_at',
+        'email_verified_at',
+
         'status_data',
     ];
 
     // ...
     protected $hidden = [
         'password',
+        'otp_code',
     ];
 
     // ...

@@ -20,6 +20,9 @@ class VotersSeeder extends Seeder
             'mac_address'           => 'EE:CE:27:91:0E:F8',
             'email'                 => 'example.voters@gmail.com',
             'password'              => Hash::make('12341234'),
+            'email_verified_at'     => now(),
+            'otp_code'              => null,
+            'otp_expired_at'        => null,
         ]);
     }
 }
