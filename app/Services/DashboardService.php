@@ -18,7 +18,7 @@ class DashboardService
             'voters'        => 0,
         ];
 
-        $stats['admin']        = Admin::where('status_data', 'Active')->count();
+        $stats['admin']         = Admin::where('status_data', 'Active')->count();
         $stats['judges']        = Judges::where('status_data', 'Active')->count();
         $stats['participants']  = Participants::where('status_data', 'Active')->count();
         $stats['voters']        = Voters::where('status_data', 'Active')->count();

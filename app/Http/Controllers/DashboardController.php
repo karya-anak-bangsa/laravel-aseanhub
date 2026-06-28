@@ -17,10 +17,10 @@ class DashboardController extends Controller
     public function showAdmin()
     {
 
-        $admin          = Auth::guard('admin')->user();
-        $stats          = $this->service->getSummaryStats();
-        $summary_judges = $this->service->getSummaryJudges();
-        $summary_participants = $this->service->getSummaryParticipants();
+        $admin                  = Auth::guard('admin')->user();
+        $stats                  = $this->service->getSummaryStats();
+        $summary_judges         = $this->service->getSummaryJudges();
+        $summary_participants   = $this->service->getSummaryParticipants();
 
         return view('modules.dashboard.admin', compact(
             'admin',

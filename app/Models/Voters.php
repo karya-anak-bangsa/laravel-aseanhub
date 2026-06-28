@@ -51,4 +51,9 @@ class Voters extends Authenticatable
         'updated_at' => 'datetime',
         'deleted_at' => 'datetime',
     ];
+
+    public function getDisplayNameAttribute(): string
+    {
+        return $this->voters_name;
+    }
 }

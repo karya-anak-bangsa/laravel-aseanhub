@@ -55,11 +55,10 @@ class LoginController extends Controller
         }
 
 
-        return back()->withInput($request->only('email'))
-            ->with('notify', [
-                'type'      => 'error',
-                'message'   => 'Invalid email or password.',
-            ]);
+        return back()->withInput($request->only('email'))->with('notify', [
+            'type'      => 'error',
+            'message'   => 'Invalid email or password.',
+        ]);
     }
 
     public function logout(Request $request)

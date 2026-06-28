@@ -57,12 +57,10 @@ class AboutAseanHubController extends Controller
 
         $data->update($updateData);
 
-        return redirect()
-            ->route('admin.about-aseanhub.index')
-            ->with('notify', [
-                'status' => 'info',
-                'text'   => 'Data successfully updated',
-            ]);
+        return redirect()->route('admin.about-aseanhub.index')->with('notify', [
+            'status' => 'info',
+            'text'   => 'Data successfully updated',
+        ]);
     }
 
     public function destroy(string $id)

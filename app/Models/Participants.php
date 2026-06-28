@@ -64,6 +64,11 @@ class Participants extends Authenticatable
         'deleted_at' => 'datetime',
     ];
 
+    public function getDisplayNameAttribute(): string
+    {
+        return $this->team_name;
+    }
+
     public function getBadgeRegistrationAttribute()
     {
         return match ($this->status_registration) {

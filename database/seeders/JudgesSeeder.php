@@ -10,15 +10,10 @@ class JudgesSeeder extends Seeder
 {
     public function run(): void
     {
-        # reset data judges
         Judges::truncate();
-
-        # data dummy
-        Judges::factory()->count(10)->assessment_one()->create();
-        Judges::factory()->count(10)->assessment_two()->create();
-        Judges::factory()->count(10)->final_assessment()->create();
-
-        # data example
+        // Judges::factory()->count(10)->assessment_one()->create();
+        // Judges::factory()->count(10)->assessment_two()->create();
+        // Judges::factory()->count(10)->final_assessment()->create();
         Judges::create([
             'judges_name'           => 'Example Judges',
             'origin_country'        => 'Indonesia',
