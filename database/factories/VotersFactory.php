@@ -45,6 +45,9 @@ class VotersFactory extends Factory
             'mac_address'    => $this->faker->macAddress(),
             'email'          => $this->faker->unique()->safeEmail(),
             'password'       => Hash::make('12341234'),
+            'otp_code' => null,
+            'otp_expired_at' => null,
+            'email_verified_at' => now(),
         ];
     }
 }
