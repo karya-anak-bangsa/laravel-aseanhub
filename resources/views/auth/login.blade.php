@@ -29,6 +29,9 @@
                         <input type="email" class="form-control" name="email" id="email" autocomplete="email">
                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                     </div>
+                    @error('email')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <label for="password" class="form-label">Password</label>
@@ -38,7 +41,10 @@
                             <i class="fas fa-eye" id="eyeIcon"></i>
                         </span>
                     </div>
-                    <small class="text-muted">Password minimum 8 characters</small>
+                    <small>Password minimum 8 characters<br></small>
+                    @error('password')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="mb-0">
                     <button type="submit" class="btn btn-login btn-warning w-100">

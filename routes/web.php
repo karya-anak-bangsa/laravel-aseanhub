@@ -4,16 +4,10 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterParticipantsController;
 use App\Http\Controllers\Auth\RegisterVotersController;
-
+use App\Http\Controllers\Auth\VerifyParticipantsEmailController;
 
 # halaman frontend
 use App\Http\Controllers\Pages\LandingPageController;
-
-# halaman Backend Admin
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Admin\JudgesController as Adm_JudgesController;
-use App\Http\Controllers\Admin\ParticipantsController as Adm_ParticipantsController;
-use App\Http\Controllers\Admin\VotersController as Adm_VotersController;
 
 # halaman Backend Landing Pages
 use App\Http\Controllers\Admin\AboutAseanHubController as Adm_AboutAseanHubController;
@@ -22,6 +16,12 @@ use App\Http\Controllers\Admin\AboutCompetitionController as Adm_AboutCompetitio
 use App\Http\Controllers\Admin\TimelineController as Adm_TimelineController;
 use App\Http\Controllers\Admin\SiteAreaController as Adm_SiteAreaController;
 use App\Http\Controllers\Admin\PhotoGalleryController as Adm_PhotoGalleryController;
+
+# halaman Backend Admin
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\JudgesController as Adm_JudgesController;
+use App\Http\Controllers\Admin\ParticipantsController as Adm_ParticipantsController;
+use App\Http\Controllers\Admin\VotersController as Adm_VotersController;
 
 # halaman backend - Judges
 
@@ -51,6 +51,17 @@ Route::middleware('guest.role')->group(function () {
     # register voters
     Route::get('/register/voters', [RegisterVotersController::class, 'create'])->name('voters.register.create');
     Route::post('/register/voters', [RegisterVotersController::class, 'store'])->name('voters.register.store');
+
+    # Verify Participants Email
+    Route::get('/verify-email/participants/{id_participants}', [VerifyParticipantsEmailController::class, 'create'])->name('participants.verify-email.create');
+    Route::post('/verify-email/participants/{id_participants}', [VerifyParticipantsEmailController::class, 'store'])->name('participants.verify-email.store');
+
+    // # Verify Voters Email
+    // Route::get('/verify-email/voters/{id_voters}', [VerifyVotersEmailController::class, 'create'])
+    //     ->name('voters.verify-email.create');
+
+    // Route::post('/verify-email/voters/{id_voters}', [VerifyVotersEmailController::class, 'store'])
+    //     ->name('voters.verify-email.store');
 });
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
