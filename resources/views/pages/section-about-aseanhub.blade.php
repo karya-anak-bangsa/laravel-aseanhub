@@ -8,8 +8,8 @@
                         <h1>{{ $about_aseanhub?->title ?? 'Default Title' }}</h1>
                         <p>{!! $about_aseanhub?->description ?? 'Default description' !!}</p>
                         <div class="hero-btns">
-                            <a href="{{ route('register') }}" class="btn-tour">
-                                <i class="text-danger fas fa-thumbs-up"></i>Join Competition
+                            <a href="{{ route('participants.register.create') }}" class="btn-tour">
+                                <i class="text-danger fas fa-thumbs-up"></i>Join as Participants
                             </a>
                             <a href="{{ route('login') }}" class="btn-tour">
                                 <i class="text-danger fas fa-right-to-bracket"></i>Sign In

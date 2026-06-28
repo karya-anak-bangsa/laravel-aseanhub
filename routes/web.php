@@ -45,12 +45,12 @@ Route::middleware('guest.role')->group(function () {
     Route::post('/login', [LoginController::class, 'login'])->name('login.process');
 
     # register participants
-    Route::get('/register/participant', [RegisterParticipantsController::class, 'create'])->name('participants.register.create');
-    Route::post('/register/participant', [RegisterParticipantsController::class, 'store'])->name('participants.register.store');
+    Route::get('/register/participants', [RegisterParticipantsController::class, 'create'])->name('participants.register.create');
+    Route::post('/register/participants', [RegisterParticipantsController::class, 'store'])->name('participants.register.store');
 
     # register voters
-    Route::get('/register/voter', [RegisterVotersController::class, 'create'])->name('voters.register.create');
-    Route::post('/register/voter', [RegisterVotersController::class, 'store'])->name('voters.register.store');
+    Route::get('/register/voters', [RegisterVotersController::class, 'create'])->name('voters.register.create');
+    Route::post('/register/voters', [RegisterVotersController::class, 'store'])->name('voters.register.store');
 });
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 

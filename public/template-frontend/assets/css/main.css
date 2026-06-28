@@ -14,7 +14,7 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-    --default-font: "Quicksand", "Inter", "Roboto", sans-serif;
+    --default-font: "Inter", "Quicksand", "Roboto", sans-serif;
     --heading-font: "Inter", "Raleway", sans-serif;
     --nav-font: "Poppins", sans-serif;
 }

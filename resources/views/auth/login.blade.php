@@ -41,9 +41,9 @@
     </div>
     {{-- card --}}
 
-    <div class="mt-3">
+    {{-- <div class="mt-3">
         <a href="{{ route('register') }}" class="text-dark fw-bold">Create an account</a>
-    </div>
+    </div> --}}
 @endsection
 
 {{-- push scripts --}}

@@ -24,8 +24,8 @@
         {{-- custom css for layouts auth --}}
         <style>
             :root {
-                --default-font: "Quicksand", "Inter", "Roboto", "Segoe UI", sans-serif;
-                --heading-font: "Raleway", sans-serif;
+                --default-font: "Inter", "Quicksand", "Roboto", "Segoe UI", sans-serif;
+                --heading-font: "Inter", "Raleway", sans-serif;
                 --nav-font: "Poppins", sans-serif;
             }
 
@@ -127,7 +127,6 @@
     </head>
 
     <body>
-
         <main class="container-fluid">
             <div class="row min-vh-100">
                 <div class="col-sm-7 d-flex flex-column align-items-center justify-content-center p-0" id="auth-left">
@@ -137,16 +136,6 @@
                     </div>
                 </div>
                 <div class="col-sm-5 d-flex flex-column align-items-center justify-content-center p-0" id="auth-right">
-                    <div class="text-center">
-                        <div class="mb-3">
-                            <img src="{{ asset('img/dki-jakarta.webp') }}" style="height:90px">
-                        </div>
-                        <div class="mb-4">
-                            <h3>Welcome to ASEAN Hub</h3>
-                            {{-- <span>Sign in to continue your journey in the competition</span> --}}
-                            {{-- <span class="text-muted">Create your account and join the competition today</span> --}}
-                        </div>
-                    </div>
                     @yield('content')
                 </div>
                 {{-- col --}}

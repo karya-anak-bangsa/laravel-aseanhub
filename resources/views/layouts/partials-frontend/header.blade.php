@@ -14,8 +14,8 @@
                     <i class="fa-solid fa-thumbs-up me-2"></i>Sign Up
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="{{ route('register') }}">As Participants</a></li>
-                    <li><a class="dropdown-item" href="{{ route('register') }}">As Voters</a></li>
+                    <li><a class="dropdown-item" href="{{ route('participants.register.create') }}">As Participants</a></li>
+                    <li><a class="dropdown-item" href="{{ route('voters.register.create') }}">As Voters</a></li>
                 </ul>
             </div>
             <a href="{{ route('login') }}" class="btn btn-danger"><i class="fa-solid fa-right-to-bracket me-2"></i>Sign In</a>
