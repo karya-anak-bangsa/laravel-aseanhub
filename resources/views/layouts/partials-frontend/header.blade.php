@@ -9,8 +9,16 @@
             </a>
         </div>
         <div class="social-links">
-            <a href="{{ route('register') }}" class="btn btn-primary me-2"><i class="fa-solid fa-thumbs-up me-2"></i>Sign Up</a>
-            <a href="{{ route('login') }}" class="btn btn-danger me-0"><i class="fa-solid fa-right-to-bracket me-2"></i>Sign In</a>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-thumbs-up me-2"></i>Sign Up
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ route('register') }}">As Participants</a></li>
+                    <li><a class="dropdown-item" href="{{ route('register') }}">As Voters</a></li>
+                </ul>
+            </div>
+            <a href="{{ route('login') }}" class="btn btn-danger"><i class="fa-solid fa-right-to-bracket me-2"></i>Sign In</a>
         </div>
     </div>
 
@@ -44,7 +52,6 @@
                         <li><a href="#">Video Gallery</a></li>
                     </ul>
                 </li>
-
                 <li><a href="#judges">Judges</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

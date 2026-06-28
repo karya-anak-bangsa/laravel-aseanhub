@@ -188,7 +188,8 @@ h6 {
 }
 
 .header .header-top .social-links {
-    gap: 16px;
+    display: flex;
+    gap: 15px;
 }
 
 /* .header .header-top .social-links a {

@@ -2,7 +2,9 @@
 
 # halaman auth
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\RegisterParticipantsController;
+use App\Http\Controllers\Auth\RegisterVotersController;
+
 
 # halaman frontend
 use App\Http\Controllers\Pages\LandingPageController;
@@ -42,9 +44,13 @@ Route::middleware('guest.role')->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'login'])->name('login.process');
 
-    # proses register
-    Route::get('/register', [RegisterController::class, 'create'])->name('register');
-    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+    # register participants
+    Route::get('/register/participant', [RegisterParticipantsController::class, 'create'])->name('participants.register.create');
+    Route::post('/register/participant', [RegisterParticipantsController::class, 'store'])->name('participants.register.store');
+
+    # register voters
+    Route::get('/register/voter', [RegisterVotersController::class, 'create'])->name('voters.register.create');
+    Route::post('/register/voter', [RegisterVotersController::class, 'store'])->name('voters.register.store');
 });
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 

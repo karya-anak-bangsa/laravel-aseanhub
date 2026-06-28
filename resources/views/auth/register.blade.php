@@ -1,7 +1,13 @@
 @extends('layouts.auth')
 
+{{-- push styles --}}
+@include('components.notify.styles')
+
+{{-- content --}}
 @section('nav-register', 'active')
 @section('content')
+
+    @include('components.notify.alert')
 
     <div class="card border-0 px-2 py-2" id="auth-card">
         <div class="card-body">
@@ -58,4 +64,4 @@
 
 @endsection
 @include('components.password.scripts')
-@include('components.sweetalert.scripts-alert')
+@include('components.notify.scripts')
