@@ -4,62 +4,41 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Services\AuthService;
+use App\Models\Voters;
 
 class RegisterVotersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('auth.voters.register');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $validated = $request->validate([
+            'voters_name'   => ['required', 'string', 'max:255'],
+            'email'         => ['required', 'email', 'max:255'],
+            'password'      => ['required', 'string', 'min:8'],
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        if (AuthService::emailExists($validated['email'])) {
+            return back()->withInput()->with('notify', [
+                'type'    => 'error',
+                'message' => 'Email has already been registered.',
+            ]);
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        $voters = Voters::create([
+            'voters_name' => $validated['voters_name'],
+            'email'       => $validated['email'],
+            'password'    => $validated['password'],
+        ]);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect()->route('login')->with('notify', [
+            'type'      => 'success',
+            'message'   => 'Registration successful. Please login.',
+        ]);
     }
 }

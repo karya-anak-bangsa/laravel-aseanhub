@@ -9,6 +9,16 @@
 
     @include('components.notify.alert')
 
+    <div class="text-center">
+        <div class="mb-3">
+            <img src="{{ asset('img/dki-jakarta.webp') }}" style="height:90px">
+        </div>
+        <div class="mb-3">
+            <h3>Welcome to ASEAN Hub</h3>
+            <span>Sign in to continue your journey in the competition</span>
+        </div>
+    </div>
+
     <div class="card border-0 px-2 py-2" id="auth-card">
         <div class="card-body">
             <form action="{{ route('login.process') }}" method="post" enctype="multipart/form-data" class="confirm-submit">
@@ -40,10 +50,6 @@
         {{-- card-body --}}
     </div>
     {{-- card --}}
-
-    {{-- <div class="mt-3">
-        <a href="{{ route('register') }}" class="text-dark fw-bold">Create an account</a>
-    </div> --}}
 @endsection
 
 {{-- push scripts --}}

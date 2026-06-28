@@ -47,9 +47,10 @@ class Voters extends Authenticatable
 
     // ...
     protected $casts = [
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
-        'deleted_at' => 'datetime',
+        'password'      => 'hashed',
+        'created_at'    => 'datetime',
+        'updated_at'    => 'datetime',
+        'deleted_at'    => 'datetime',
     ];
 
     public function getDisplayNameAttribute(): string
