@@ -90,7 +90,7 @@
             <div class="footer">
                 If you did not create this account, you can safely ignore this email.
                 <div class="copyright">
-                    © {{ date('Y') }} ASEAN Hub International Design Competition.All Rights Reserved.
+                    © {{ date('Y') }} ASEAN Hub International Design Competition. All Rights Reserved.
                 </div>
             </div>
 

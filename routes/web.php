@@ -62,6 +62,8 @@ Route::middleware('guest.role')->group(function () {
 
     // Route::post('/verify-email/voters/{id_voters}', [VerifyVotersEmailController::class, 'store'])
     //     ->name('voters.verify-email.store');
+
+    Route::post('/verify-email/participants/{id_participants}/resend', [VerifyParticipantsEmailController::class, 'resend'])->name('participants.verify-email.resend');
 });
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 

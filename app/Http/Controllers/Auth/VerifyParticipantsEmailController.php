@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Participants;
 use Illuminate\Http\Request;
+use App\Mail\OtpMail;
+use Illuminate\Support\Facades\Mail;
 
 class VerifyParticipantsEmailController extends Controller
 {
@@ -52,6 +54,31 @@ class VerifyParticipantsEmailController extends Controller
         return redirect()->route('login')->with('notify', [
             'type'      => 'success',
             'message'   => 'Email verification successful. Please login.',
+        ]);
+    }
+
+    public function resend(string $id_participants)
+    {
+        $participants = Participants::findOrFail($id_participants);
+
+        if ($participants->email_verified_at !== null) {
+            return redirect()->route('login')->with('notify', [
+                'type'      => 'info',
+                'message'   => 'Your email has already been verified.',
+            ]);
+        }
+
+        $participants->update([
+            'otp_code'          => random_int(100000, 999999),
+            'otp_expired_at'    => now()->addMinutes(5),
+            'email_verified_at' => null,
+        ]);
+
+        Mail::to($participants->email)->send(new OtpMail($participants));
+
+        return back()->with('notify', [
+            'type'      => 'success',
+            'message'   => 'A new verification code has been sent to your email.',
         ]);
     }
 }
