@@ -1,11 +1,11 @@
 <section id="opening-speeches" class="alumni section light-background">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
 
         <div class="section-title">
             <h2>Opening Speech</h2>
         </div>
 
-        <div class="row mb-5">
+        <div class="row g-0">
             @foreach ($opening_speeches as $index => $item)
                 <div class="col-12 mb-4">
                     <div class="profile-row border-danger">
@@ -40,10 +40,8 @@
 </section>
 {{-- section --}}
 
-<section id="about" class="about section light-background">
-
+{{-- <section id="about" class="about section light-background">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row g-5 align-items-stretch">
             <div class="col-lg-5" data-aos="fade-right" data-aos-delay="150">
                 <div class="campus-showcase">
@@ -99,7 +97,5 @@
                 </div>
             </div>
         </div><!-- End Story Row -->
-
     </div>
-
-</section><!-- /About Section -->
+</section><!-- /About Section --> --}}

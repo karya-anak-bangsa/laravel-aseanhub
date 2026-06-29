@@ -22,7 +22,8 @@
                         <i class="bi bi-envelope"></i>
                     </div>
                     <h5>Email Us</h5>
-                    <p>dki@jakarta.go.id</p>
+                    <p>biroksd@jakarta.go.id</p>
+                    <p>internationalcooperation@jakarta.go.id</p>
                 </div>
             </div>
 
@@ -32,15 +33,13 @@
                         <i class="bi bi-telephone"></i>
                     </div>
                     <h5>Phone Line</h5>
-                    <p>(+6221) 382 2255</p>
+                    <p>0819-3285-5946</p>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6">
                 <div class="info-tile">
-                    <div class="tile-icon">
-                        <i class="bi bi-clock"></i>
-                    </div>
+                    <div class="tile-icon"><i class="bi bi-clock"></i></div>
                     <h5>Office Hours</h5>
                     <p>Monday-Friday: 8AM - 5PM</p>
                 </div>

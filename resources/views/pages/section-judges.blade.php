@@ -4,10 +4,6 @@
         {{-- Section Title --}}
         <div class="section-title">
             <h2>Our Judges on ASEAN Hub</h2>
-            <p>
-                Meet distinguished judges from various countries and institutions
-                who contribute their expertise to ASEAN Hub Competition.
-            </p>
         </div>
 
         <div class="staff-showcase">

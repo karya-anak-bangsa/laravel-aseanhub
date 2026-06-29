@@ -1,11 +1,10 @@
 <section id="photo-gallery" class="students-life section light-background">
-
-    <div class="container section-title">
-        <h2>Photo Gallery and Moments</h2>
-        <p>Documentation and urban moments from ASEAN HUB International Design Competition.</p>
-    </div>
-
     <div class="container">
+
+        <div class="section-title">
+            <h2>Photo Gallery and Moments</h2>
+        </div>
+
         <div class="moments-gallery">
             <div class="row g-3">
                 @foreach ($photo_gallery as $index => $gallery)
@@ -21,6 +20,7 @@
             </div>
         </div>
         {{-- moments-gallery --}}
+
     </div>
     {{-- -container --}}
 </section>

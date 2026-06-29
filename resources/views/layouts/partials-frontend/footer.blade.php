@@ -37,8 +37,8 @@
             <h4>Contact Us</h4>
             <p>Jl. Medan Merdeka Selatan 8-9 Jakarta Pusat, Jakarta.</p>
             <p>Indonesia</p>
-            <p class="mt-4"><strong>Phone:</strong> <span>(+6221) 382 2255</span></p>
-            <p><strong>Email:</strong> <span>dki@jakarta.go.id</span></p>
+            <p class="mt-4"><strong>Phone:</strong> <span>0819-3285-5946</span></p>
+            <p><strong>Email : </strong> <span>biroksd@jakarta.go.id</span></p>
         </div>
 
     </div>
