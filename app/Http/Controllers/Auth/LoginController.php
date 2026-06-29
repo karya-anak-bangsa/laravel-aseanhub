@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Participants;
+use App\Models\Voters;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Services\AuthService;
 
 class LoginController extends Controller
 {
@@ -15,13 +18,35 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        # step 1. Check request
+        #--------------------------------------------------------------------------
+        # Step 1. Validation
+        #--------------------------------------------------------------------------
         $credentials = $request->validate([
-            'email'    => 'required|email',
-            'password' => 'required',
+            'email'    => ['required', 'email'],
+            'password' => ['required'],
         ]);
 
-        # step 2. Check hak akses
+        #--------------------------------------------------------------------------
+        # Step 2. Email Exists
+        #--------------------------------------------------------------------------
+        if (! AuthService::emailExists($credentials['email'])) {
+            return back()->withInput($request->only('email'))->with('notify', [
+                'type'    => 'error',
+                'message' => 'Invalid email or password.',
+            ]);
+        }
+
+        #--------------------------------------------------------------------------
+        # Step 3. Email Verified
+        #--------------------------------------------------------------------------
+        if (! AuthService::isVerified($credentials['email'])) {
+            return back()->withInput($request->only('email'))->with('notify', [
+                'type'    => 'warning',
+                'message' => 'Please verify your email before logging in.',
+            ]);
+        }
+
+        # Step 4. Login Admin
         if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('admin.dashboard')->with('notify', [
@@ -30,6 +55,7 @@ class LoginController extends Controller
             ]);
         }
 
+        # Step 5. Login Judges
         if (Auth::guard('judges')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('judges.dashboard')->with('notify', [
@@ -38,6 +64,7 @@ class LoginController extends Controller
             ]);
         }
 
+        # Step 6. Login Participants
         if (Auth::guard('participants')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('participants.dashboard')->with('notify', [
@@ -46,6 +73,7 @@ class LoginController extends Controller
             ]);
         }
 
+        # Step 7. Login Voters
         if (Auth::guard('voters')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('voters.dashboard')->with('notify', [
@@ -54,12 +82,13 @@ class LoginController extends Controller
             ]);
         }
 
-
+        # Step 8. Login Failed
         return back()->withInput($request->only('email'))->with('notify', [
             'type'      => 'error',
             'message'   => 'Invalid email or password.',
         ]);
     }
+
 
     public function logout(Request $request)
     {
