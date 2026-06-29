@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Mail\OtpMail;
+use App\Models\Voters;
+use App\Services\AuthService;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Services\AuthService;
-use App\Models\Voters;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterVotersController extends Controller
 {
@@ -31,14 +33,19 @@ class RegisterVotersController extends Controller
         }
 
         $voters = Voters::create([
-            'voters_name' => $validated['voters_name'],
-            'email'       => $validated['email'],
-            'password'    => $validated['password'],
+            'voters_name'           => $validated['voters_name'],
+            'email'                 => $validated['email'],
+            'password'              => $validated['password'],
+            'otp_code'              => random_int(100000, 999999),
+            'otp_expired_at'        => now()->addMinutes(5),
+            'email_verified_at'     => null,
         ]);
 
-        return redirect()->route('login')->with('notify', [
+        Mail::to($voters->email)->send(new OtpMail($voters));
+
+        return redirect()->route('voters.verify-email.create', $voters->id_voters)->with('notify', [
             'type'      => 'success',
-            'message'   => 'Registration successful. Please login.',
+            'message'   => 'Verification code has been sent to your email.',
         ]);
     }
 }

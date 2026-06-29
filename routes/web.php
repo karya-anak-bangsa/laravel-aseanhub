@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterParticipantsController;
 use App\Http\Controllers\Auth\RegisterVotersController;
 use App\Http\Controllers\Auth\VerifyParticipantsEmailController;
+use App\Http\Controllers\Auth\VerifyVotersEmailController;
 
 # halaman frontend
 use App\Http\Controllers\Pages\LandingPageController;
@@ -39,7 +40,6 @@ use Illuminate\Support\Facades\Route;
 # Route Auth -------------------------------------------------------------------------------------- #
 # ------------------------------------------------------------------------------------------------- #
 Route::middleware('guest.role')->group(function () {
-
     # proses login
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'login'])->name('login.process');
@@ -55,15 +55,12 @@ Route::middleware('guest.role')->group(function () {
     # Verify Participants Email
     Route::get('/verify-email/participants/{id_participants}', [VerifyParticipantsEmailController::class, 'create'])->name('participants.verify-email.create');
     Route::post('/verify-email/participants/{id_participants}', [VerifyParticipantsEmailController::class, 'store'])->name('participants.verify-email.store');
-
-    // # Verify Voters Email
-    // Route::get('/verify-email/voters/{id_voters}', [VerifyVotersEmailController::class, 'create'])
-    //     ->name('voters.verify-email.create');
-
-    // Route::post('/verify-email/voters/{id_voters}', [VerifyVotersEmailController::class, 'store'])
-    //     ->name('voters.verify-email.store');
-
     Route::post('/verify-email/participants/{id_participants}/resend', [VerifyParticipantsEmailController::class, 'resend'])->name('participants.verify-email.resend');
+
+    # Verify Voters Email
+    Route::get('/verify-email/voters/{id_voters}', [VerifyVotersEmailController::class, 'create'])->name('voters.verify-email.create');
+    Route::post('/verify-email/voters/{id_voters}', [VerifyVotersEmailController::class, 'store'])->name('voters.verify-email.store');
+    Route::post('/verify-email/voters/{id_voters}/resend', [VerifyVotersEmailController::class, 'resend'])->name('voters.verify-email.resend');
 });
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
