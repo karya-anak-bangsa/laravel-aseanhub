@@ -118,3 +118,5 @@ Route::middleware(['auth:voters', 'role:voters'])->prefix('voters')->name('voter
     ->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'showVoters'])->name('dashboard');
     });
+
+# ------------------------------------------------------------------------------------------------- #
