@@ -8,7 +8,7 @@
         <div class="moments-gallery">
             <div class="row g-3">
                 @foreach ($photo_gallery as $index => $gallery)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-6">
                         <a href="{{ $gallery->image_url }}" class="moment-item glightbox" data-gallery="campus-moments">
                             <img src="{{ $gallery->image_url }}" alt="{{ $gallery->title }}" class="img-fluid" loading="lazy">
                             <div class="moment-overlay">
