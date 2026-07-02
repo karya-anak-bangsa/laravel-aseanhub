@@ -11,7 +11,7 @@
             {{-- Judges List --}}
             <div class="row g-4">
                 @foreach ($judges as $item)
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-3">
                         <div class="staff-card">
                             <div class="card-image">
                                 <img
